@@ -1,0 +1,16 @@
+header{
+    background-color: #369FFF;
+    height: 10vh;
+    box-shadow: 0px 1px 10px #9a9a9a;
+}
+
+header>img, svg{
+    width: 5em;
+    transform: rotate(45deg);
+}
+
+.tituloHeader{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    letter-spacing: 0.3em;
+}
