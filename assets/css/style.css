@@ -1,4 +1,7 @@
-
+*{
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed'!important;
+}
 html{
     height: 100%;
 }
@@ -30,4 +33,24 @@ header>img, svg{
 .btn-primary{
    background-color: #0061FF!important;
    border-color: #0061FF!important;
+}
+
+.info{
+border-color: #a1d0fb!important;
+}
+
+.text{
+    color: #4ba8ff!important;
+}
+
+.btn{
+background-color: #369FFF!important;
+border:none!important;
+}
+
+.asistenciaGrid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 1em;
 }
