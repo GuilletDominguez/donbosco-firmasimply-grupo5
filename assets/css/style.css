@@ -1,3 +1,12 @@
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+}
+
 header{
     background-color: #369FFF;
     height: 10vh;
@@ -13,4 +22,12 @@ header>img, svg{
     font-family: 'Roboto Condensed', sans-serif;
     color: white;
     letter-spacing: 0.3em;
+}
+
+.form-group{
+    margin: 1.5em 0 1.5em 0;
+}
+.btn-primary{
+   background-color: #0061FF!important;
+   border-color: #0061FF!important;
 }
