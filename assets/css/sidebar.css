@@ -1,4 +1,6 @@
-
+.container-fluid{
+    display: none;
+}
 a,
 a:hover,
 a:focus {
@@ -175,6 +177,7 @@ a.article:hover {
     position: absolute;
     top: 0;
     right: 0;
+    display: none;
 }
 
 #perfil{
@@ -192,9 +195,10 @@ a.article:hover {
 
 @media screen and (max-width: 800px) {
 
-    .container-fluid{
-        position: relative!important
-        ;
+   
+    #content{
+        display: inline;
+        position: relative;
     }
     
 } 
