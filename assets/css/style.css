@@ -16,7 +16,7 @@ header{
     box-shadow: 0px 1px 10px #9a9a9a;
 }
 
-header>img, svg{
+#Layer_1{
     width: 5em;
     transform: rotate(45deg);
 }
