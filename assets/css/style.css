@@ -50,7 +50,8 @@ border:none!important;
 
 .asistenciaGrid{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    column-gap: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
+    grid-template-rows: 10rem 10rem;
+    grid-auto-flow: dense;
 }
+
