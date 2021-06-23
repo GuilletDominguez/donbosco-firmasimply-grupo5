@@ -23,7 +23,7 @@
 </head>
 
 <body>
-  
+
   <header class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
 
     <h1 class="tituloHeader">FIRMASIMPLY</h1>
@@ -68,37 +68,46 @@
     </svg>
   </header>
   <div class="wrapper"></div>
-    <!-- Sidebar  -->
-    <nav id="sidebar">
-        <div id="dismiss">
-            <i class="fas fa-arrow-left"></i>
-        </div>
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div id="dismiss">
+      <i class="fas fa-arrow-left"></i>
+    </div>
 
-        <div class="sidebar-header">
-            <h3>Menú</h3>
-        </div>
+    <div class="sidebar-header">
+      <h3>Menú</h3>
+    </div>
 
-        <ul class="list-unstyled components">
-          <div id="perfil">
-            <img src="https://gcdn.emol.cl/hombres/files/2013/10/feo-8.jpg" alt="">
-            <p>Pepe peña</p>
-          </div>
-            <li>
-                <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
-               
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-capsules"></i> Pildora</a>
-            </li>
-            <li>
-                <a href="#"><i class="fas fa-list-ol"></i> Tareas</a>
-            </li>
-        </ul>
+    <ul class="list-unstyled components">
+      <div id="perfil">
+        <img src="https://gcdn.emol.cl/hombres/files/2013/10/feo-8.jpg" alt="">
+        <p>Pepe peña</p>
+      </div>
+      <li>
+        <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
 
-    </nav>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-capsules"></i> Pildora</a>
+      </li>
+      <li>
+        <a href="#"><i class="fas fa-list-ol"></i> Tareas</a>
+      </li>
+    </ul>
 
-    <!-- Page Content  -->
-    <div id="content">
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid" style="position: absolute">
+
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+
+        </button>
+
 
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -109,14 +118,12 @@
                 </button>
               
 
-               
-        </nav>
 
+    <div class="overlay"></div>
+  </div>
 
-<div class="overlay"></div>
-    </div>  
-        
-  <div class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
+  <div
+    class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
     <div class="card info mb-3" style="max-width: 18rem;">
       <div class="card-header text">Registro de asistencia</div>
       <div class="card-body text-info">
@@ -145,77 +152,82 @@
         </div>
       </div>
     </div>
-<div class="contenedorGrid d-flex">
-    <div class="asistenciaGrid">
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
+    <div class="contenedorGrid d-flex">
+      <div class="asistenciaGrid">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
+      </div>
+      <div class="asistenciaGrid">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
+
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">Día: 19/06/2021</h5>
+            <p class="card-text">Entrada: 8:31H</p>
+            <p class="card-text">Salida: 15:30H</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="asistenciaGrid">
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
 
-    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">Día: 19/06/2021</h5>
-        <p class="card-text">Entrada: 8:31H</p>
-        <p class="card-text">Salida: 15:30H</p>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
-    </div>
-  </div>
+  <nav></nav>
+  <section></section>
+  <section></section>
+  <aside></aside>
 
 
 
@@ -230,14 +242,18 @@
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-   <!-- jQuery CDN - Slim version (=without AJAX) -->
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-   <!-- Popper.JS -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-   <!-- Bootstrap JS -->
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-   <!-- jQuery Custom Scroller CDN -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<!-- jQuery Custom Scroller CDN -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
 
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/sidebar.js"></script>
