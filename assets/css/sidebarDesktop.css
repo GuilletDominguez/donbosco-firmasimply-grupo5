@@ -1,4 +1,6 @@
-
+.container-fluid{
+    display: none;
+}
 a,
 a:hover,
 a:focus {
@@ -35,7 +37,7 @@ a:focus {
 
 #sidebar {
     width: 250px;
-    position: fixed;
+    
     top: 0;
     left: -250px;
     height: 100vh;
@@ -44,12 +46,14 @@ a:focus {
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+    left: 0;
+   
 }
 
 #sidebar.active {
     left: 0;
 }
+
 
 #dismiss {
     width: 35px;
@@ -64,6 +68,7 @@ a:focus {
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s;
+    display: none;
 }
 
 #dismiss:hover {
@@ -71,26 +76,13 @@ a:focus {
     color: #7386D5;
 }
 
-.overlay {
-    display: none;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 998;
-    opacity: 0;
-    transition: all 0.5s ease-in-out;
-    top: 0;
-}
-.overlay.active {
-    display: block;
-    opacity: 1;
-}
 
 #sidebar .sidebar-header {
     padding: 20px;
     background: #369FFF;
+    color: #369FFF;
     border-bottom: 1px solid white;
+    
 }
 
 #sidebar ul.components {
@@ -166,15 +158,18 @@ a.article:hover {
 /* ---------------------------------------------------
     CONTENT STYLE
 ----------------------------------------------------- */
-
+.pepe{
+    display: none;
+}
 #content {
     width: 100%;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
-    
+    position: absolute;
     top: 0;
     right: 0;
+  
 }
 
 #perfil{

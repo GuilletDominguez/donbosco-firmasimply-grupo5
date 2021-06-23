@@ -22,7 +22,8 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/sidebar.css" media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="css/sidebarDesktop.css" media="screen and (min-width:801px)">
     <title>Registro Asistencia</title>
 </head>
 
@@ -71,9 +72,10 @@
       C735.901,182.864,733.985,182.72,730.174,186.044z" style="fill: rgb(255, 255, 255);"></path>
     </svg>
   </header>
-  <div class="wrapper"></div>
+  <div class="wrapper">
     <!-- Sidebar  -->
-    <nav id="sidebar">
+    
+    <nav id="sidebar" class="animate__animated animate__slideInLeft">
         <div id="dismiss">
             <i class="fas fa-arrow-left"></i>
         </div>
@@ -107,7 +109,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid" style="position: absolute">
 
-                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <button type="button" id="sidebarCollapse" class="btn btn-info pepe">
                     <i class="fas fa-align-left"></i>
   
                 </button>
@@ -116,9 +118,9 @@
                
         </nav>
 
-
+      </div>
 <div class="overlay"></div>
-    </div>  
+    
         
   <div class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
     <div class="card info mb-3" style="max-width: 18rem;">
@@ -218,7 +220,7 @@
   </div>
 </div>
   </div>
-    </div>
+  
   </div>
 
 
