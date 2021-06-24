@@ -13,13 +13,19 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/sidebar.css"media="screen and (max-width:800px)">
-    <link rel="stylesheet" href="css/sidebarDesktop.css" media="screen and (min-width:801px)">
-    <title>Registro Asistencia</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+    integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+    integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/sidebar.css" media="screen and (max-width:800px)">
+  <link rel="stylesheet" href="css/sidebarDesktop.css" media="screen and (min-width:801px)">
+  <title>Registro Asistencia</title>
 </head>
 
 <body>
@@ -67,155 +73,150 @@
       C735.901,182.864,733.985,182.72,730.174,186.044z" style="fill: rgb(255, 255, 255);"></path>
     </svg>
   </header>
-  <div class="wrapper"></div>
-  <!-- Sidebar  -->
-  <nav id="sidebar">
-    <div id="dismiss">
-      <i class="fas fa-arrow-left"></i>
-    </div>
-
-    <div class="sidebar-header">
-      <h3>Menú</h3>
-    </div>
-
-    <ul class="list-unstyled components">
-      <div id="perfil">
-        <img src="https://gcdn.emol.cl/hombres/files/2013/10/feo-8.jpg" alt="">
-        <p>Pepe peña</p>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+      <div id="dismiss">
+        <i class="fas fa-arrow-left"></i>
       </div>
-      <li>
-        <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
 
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-capsules"></i> Pildora</a>
-      </li>
-      <li>
-        <a href="#"><i class="fas fa-list-ol"></i> Tareas</a>
-      </li>
-    </ul>
-
-  </nav>
-
-  <!-- Page Content  -->
-  <div id="content">
-
-    <nav class="navbar navbar-expand-lg">
-      <div class="container-fluid" style="position: absolute">
-
-        <button type="button" id="sidebarCollapse" class="btn btn-info">
-          <i class="fas fa-align-left"></i>
-
-        </button>
-
-
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-
-                <button type="button" id="sidebarCollapse" class="btn btn-info pepe">
-                    <i class="fas fa-align-left pepe"></i>
-  
-                </button>
-              
-
-
-    <div class="overlay"></div>
-  </div>
-
-  <div
-    class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
-    <div class="card info mb-3" style="max-width: 18rem;">
-      <div class="card-header text">Registro de asistencia</div>
-      <div class="card-body text-info">
-        <h5 class="card-title text"><strong>Confirme su asistencia de hoy</strong></h5>
-        <p class="card-text text">Pulse el botón de "Entrada" para validar la entrada a clase de hoy o "Salida" para
-          validar la salida de clase.</p>
-
-        <div class="form-group">
-          <label class="text" for="exampleFormControlTextarea1">Nota para adjuntar</label>
-          <textarea style="resize: none;" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        </div>
-
-        <div class="form-check mb-3 form-check-inline">
-          <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-          <label class="form-check-label text" for="inlineCheckbox1">Confirmar adjuntar nota</label>
-        </div>
-
-
-        <div class="alineadoBotones w-100 d-flex justify-content-around align-items-center">
-          <button type="button" id="tooltipt" data-toggle="tooltip" data-placement="bottom"
-            title="Recuerda que puedes añadir una nota antes de enviar tu entrada de clase"
-            class="btn btn-primary ">Entrada</button>
-          <button type="button" data-toggle="tooltip" data-placement="bottom"
-            title="Recuerda que puedes añadir una nota antes de enviar tu salida de clase"
-            class="btn btn-primary">Salida</button>
-        </div>
+      <div class="sidebar-header">
+        <h3>Menú</h3>
       </div>
+
+      <ul class="list-unstyled components">
+        <div id="perfil">
+          <img src="https://gcdn.emol.cl/hombres/files/2013/10/feo-8.jpg" alt="">
+          <p>Pepe peña</p>
+        </div>
+        <li>
+          <a href="#" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
+
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-capsules"></i> Pildora</a>
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-list-ol"></i> Tareas</a>
+        </li>
+      </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+
+
+
+
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+
+          <button type="button" id="sidebarCollapse" class="btn btn-info pepe">
+            <i class="fas fa-align-left pepe"></i>
+
+          </button>
+        </div>
+      </nav>
+
+      <div class="overlay"></div>
     </div>
-    <div class="contenedorGrid d-flex">
-      <div class="asistenciaGrid">
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
-          </div>
-        </div>
 
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
-          </div>
-        </div>
+    <div
+      class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
+      <div class="card info mb-3" style="max-width: 18rem;">
+        <div class="card-header text">Registro de asistencia</div>
+        <div class="card-body text-info">
+          <h5 class="card-title text"><strong>Confirme su asistencia de hoy</strong></h5>
+          <p class="card-text text">Pulse el botón de "Entrada" para validar la entrada a clase de hoy o "Salida" para
+            validar la salida de clase.</p>
 
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+          <div class="form-group">
+            <label class="text" for="exampleFormControlTextarea1">Nota para adjuntar</label>
+            <textarea style="resize: none;" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
-        </div>
 
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+          <div class="form-check mb-3 form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label text" for="inlineCheckbox1">Confirmar adjuntar nota</label>
+          </div>
+
+
+          <div class="alineadoBotones w-100 d-flex justify-content-around align-items-center">
+            <button type="button" id="tooltipt" data-toggle="tooltip" data-placement="bottom"
+              title="Recuerda que puedes añadir una nota antes de enviar tu entrada de clase"
+              class="btn btn-primary ">Entrada</button>
+            <button type="button" data-toggle="tooltip" data-placement="bottom"
+              title="Recuerda que puedes añadir una nota antes de enviar tu salida de clase"
+              class="btn btn-primary">Salida</button>
           </div>
         </div>
       </div>
-      <div class="asistenciaGrid">
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+      <div class="contenedorGrid d-flex">
+        <div class="asistenciaGrid">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
           </div>
         </div>
-
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+        <div class="asistenciaGrid">
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
           </div>
-        </div>
 
-        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">Día: 19/06/2021</h5>
-            <p class="card-text">Entrada: 8:31H</p>
-            <p class="card-text">Salida: 15:30H</p>
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <p class="card-text">Entrada: 8:31H</p>
+              <p class="card-text">Salida: 15:30H</p>
+            </div>
           </div>
         </div>
       </div>
@@ -223,11 +224,6 @@
   </div>
 
 
-
-  <nav></nav>
-  <section></section>
-  <section></section>
-  <aside></aside>
 
 
 
