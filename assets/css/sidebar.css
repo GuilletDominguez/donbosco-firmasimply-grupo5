@@ -40,7 +40,7 @@ a:focus {
     left: -250px;
     height: 100vh;
     z-index: 999;
-    background: #369FFF;
+    background: #1c8cf3;
     color: #fff;
     transition: all 0.3s;
     overflow-y: scroll;
@@ -89,7 +89,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #369FFF;
+    background: #1c8cf3;
     border-bottom: 1px solid white;
 }
 
@@ -190,3 +190,9 @@ a.article:hover {
 }
 
 
+#logOut{
+    border: none;
+    margin-left: 10px;
+    background-color: #1c8cf3;
+    color: white;
+}
