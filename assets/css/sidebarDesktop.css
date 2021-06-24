@@ -184,4 +184,7 @@ a.article:hover {
     height: 50px;
 }
 
+#sidebarCollapse{
+    display: none;
+}
 
