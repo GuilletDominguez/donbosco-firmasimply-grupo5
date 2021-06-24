@@ -1,45 +1,46 @@
 //  NO TOCAR NADA DEL ARCHIVO
 
 // Bloque de funciones "públicas"
+const hostName = 'http://143.198.170.155'
 
 async function listadoAsistencias(token) {
-  return await apiGetCall('http://163.172.135.235:3000/api/v1/events',token);
+  return await apiGetCall(hostName+'/listadoAsistencias',token);
 };
 
 async function registrarAsistencia(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  return await apiPostCall(hostName+'/registrarAsistencia' ,token,data);
 };
 
 async function listadoTareas(token) {
-  return await apiGetCall('url al listado',token);
+  return await apiGetCall(hostName+'/listadoTareas' ,token);
 };
 
 async function crearTarea(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  return await apiPostCall(hostName+'/crearTarea' ,token,data);
 };
 
 async function completarTarea(token, data = {}) {
-  return await apiPutCall('url al update',token,data);
+  return await apiPutCall(hostName+'/completarTarea' ,token,data);
 };
 
 async function borrarTarea(token, data = {}) {
-  return await apiDeleteCall('url al delete',token,data);
+  return await apiDeleteCall(hostName+'/borrarTarea' ,token,data);
 };
 
 async function listadoPildoras(token, data = 0) {
-  return await apiGetCall('url al listado',token);
+  return await apiGetCall(hostName+'/listadoPildoras' ,token);
 };
 
 async function crearPildora(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  return await apiPostCall(hostName+'/crearPildora' ,token,data);
 };
 
 async function borrarPildora(token, data = {}) {
-  return await apiDeleteCall('url al delete',token,data);
+  return await apiDeleteCall(hostName+'/borrarPildora' ,token,data);
 };
 
 async function actualizarPildora(token, data = {}) {
-  return await apiPutCall('url al update',token,data);
+  return await apiPutCall(hostName+'/actualizarPildora',token,data);
 };
 
 // Bloque de funciones de llamadas por métodos
