@@ -187,4 +187,7 @@ a.article:hover {
 #sidebarCollapse{
     display: none;
 }
-
+.wrapper{
+    display: flex;
+    align-items: baseline;
+}

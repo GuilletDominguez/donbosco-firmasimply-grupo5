@@ -7,7 +7,7 @@ window.onload = () => {
         var email = document.getElementById('exampleInputEmail1').value;
         var password = document.getElementById('exampleInputPassword1').value;
 
-        axios.post('http://localhost/127.0.0.1/firmasimply/users', {
+        axios.post('http://163.172.135.235:3000/api/v1/users/login', {
 
                 email: email,
                 password: password,
