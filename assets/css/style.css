@@ -54,4 +54,41 @@ border:none!important;
     grid-template-rows: 10rem 10rem;
     grid-auto-flow: dense;
 }
+.columnas{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    margin-bottom: 2vw;
+}
 
+.enlaces{
+    color: white;   
+    text-align: center;
+    list-style: none;
+    margin: 0 2vw 0 0;
+}
+.enlaces li a{
+    color: white;
+}
+.tituloh3{
+    text-align: center;
+}
+.footerImagen{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    padding:2vw;
+    justify-content: center;
+}
+.imagenFooter{
+    display: flex;
+    align-items: center;
+}
+
+.tituloHeaderFooter{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: white;
+    letter-spacing: 0.3em;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+}
