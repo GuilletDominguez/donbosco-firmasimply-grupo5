@@ -7,9 +7,9 @@ window.onload = () => {
         var email = document.getElementById('exampleInputEmail1').value;
         var password = document.getElementById('exampleInputPassword1').value;
 
-        axios.post('http://163.172.135.235:3000/api/v1/users/login', {
+        axios.post('http://localhost/phpmyadmin/sql.php?db=registros&table=datos', {
 
-                email: email,
+                email : email,
                 password: password,
 
             })
