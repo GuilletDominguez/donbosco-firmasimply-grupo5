@@ -1,0 +1,16 @@
+.formularioPildoras{
+   
+    display: flex;
+    justify-content: center;
+    margin: 13vh 0 23vh 0;
+}
+legend.text-center.header{
+    margin: 0 0 5vw 0;
+    font-weight: bolder !important;
+    font-size: 30px;
+}
+
+.form-group{
+    display: flex;
+    justify-content: center;
+}
