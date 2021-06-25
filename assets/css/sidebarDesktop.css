@@ -195,7 +195,9 @@ a.article:hover {
     display: flex;
     align-items: baseline;
 }
-
+#logOut:hover{
+    cursor: pointer;
+}
 @media only screen and (max-width : 800px) {
     a,
 a:hover,

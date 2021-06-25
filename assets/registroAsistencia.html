@@ -73,6 +73,7 @@
       C735.901,182.864,733.985,182.72,730.174,186.044z" style="fill: rgb(255, 255, 255);"></path>
     </svg>
   </header>
+  <div id="alerta"></div>
   <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar" class="animate__animated animate__slideInLeft">
@@ -118,7 +119,25 @@
           </button>
         </div>
       </nav>
-
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de cierre de sesión</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¿Estás seguro de que quieres cerrar sesión?
+            </div>
+            <div class="modal-footer">
+              <button id="confirmar" type="submit" class="btn btn-secondary" data-dismiss="modal">Sí, quiero salir.</button>
+              <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero volver.</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="overlay"></div>
     </div>
     <!-- --------------------------------------------------------------------------CONTENEDOR BODY---------------------------------------------------------- -->
