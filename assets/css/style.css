@@ -183,5 +183,11 @@ border:none!important;
    #content{
        min-height: none!important;
    }
+   #Layer_1{
+       display: none;
+   }
+   header{
+       align-items: center!important;
+   }
 }
 
