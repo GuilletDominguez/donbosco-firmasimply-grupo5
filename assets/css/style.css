@@ -173,12 +173,13 @@ border:none!important;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 1vw;
+        width: 50vw;
     }
    .asistenciaGrid1 div,
    .pildorasGrid2 div,
    .tareasGrid3 div{
        width: 70vw;
+       max-width: none!important;
    }
    #content{
        min-height: none!important;
