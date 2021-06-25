@@ -206,8 +206,30 @@ border:none!important;
     #form{
         width: 80%;
         font-size: calc(1.2em + 1vw);
+        display: flex;
+        flex-direction: column;
+    }
+    .btn-primary{
+        width: 80%!important;
+        font-size: calc(0.8em + 1vw)!important;
+        font-weight: bolder!important;
+        margin-top: 5vh;
+        align-self: center;
+    }
+    .form-group{
+        margin: 0.5em 0 1.5em 0;
     }
 
-   
+.form-group input{
+    height: 8vh;
+    margin-top: 2vh;
+}
+.form-group label{
+    font-weight: bold;
+}
+#emailHelp{
+    font-size: calc(0.5em + 1vw);
+}
+
 }
 
