@@ -146,7 +146,6 @@ border:none!important;
 
 @media screen and (max-width : 800px) {
     .d-flex{
-    
     flex-direction: column; 
     }
     
@@ -185,15 +184,30 @@ border:none!important;
    #content{
        min-height: none!important;
    }
-   
+
    #header{
        align-items: center!important;
        flex-direction: row;
-   }
+    }
 
-   #header h1{
-       font-size: 9vw;
-   }
-}
+#header h1{
+
+        font-size: 9vw;
+    }
+
+    #Layer_1 {
+        margin-bottom: 1.3em;
+    }
+    #contenedorbody{
+        justify-content: start!important;
+        width: 100%!important;
+        align-items: center!important;
+    }
+    #form{
+        width: 80%;
+        font-size: calc(1.2em + 1vw);
+    }
+
+   
 
 
