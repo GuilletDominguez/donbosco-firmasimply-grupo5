@@ -48,10 +48,12 @@ background-color: #369FFF!important;
 border:none!important;
 }
 
-.asistenciaGrid{
+.asistenciaGrid1{
+    width: 31rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(5rem, 1fr));
-    grid-template-rows: 10rem 10rem;
+    column-gap: 1rem;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 7rem 7rem;
     grid-auto-flow: dense;
 }
 .columnas{
@@ -60,6 +62,45 @@ border:none!important;
     width: 100%;
     margin-bottom: 2vw;
 }
+.pildorasGrid2{
+    width: 31rem;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 11rem 11rem;
+    grid-auto-flow: dense;
+}
+
+.tareasGrid3 {
+    width: 31rem;
+    display: grid;
+    column-gap: 1rem;
+    grid-template-columns: 15rem 15rem;
+    grid-template-rows: 11rem 11rem;
+    grid-auto-flow: dense;
+}
+
+.card-text, .card-title{
+    font-size: 1rem;
+}
+.card-body>.card-title{
+    text-align: center;
+    -webkit-text-stroke-width: thin;
+}
+
+.asistenciaGrid1>.bg-info {
+    background-color: #1c8cf3!important;
+ }
+
+.pildorasGrid2>.bg-info {
+   background-color:#0a58ca!important;
+}
+
+.tareasGrid3>.bg-info {
+    background-color: #6c757d!important;
+ }
+
+
 
 .enlaces{
     color: white;   
@@ -100,6 +141,56 @@ border:none!important;
     display: flex;
     align-items: flex-end;
     text-align: center;
+}
+
+
+@media screen and (max-width : 800px) {
+    .d-flex{
+    
+    flex-direction: column; 
+    }
+    
+    .alineadoBotones{
+        flex-direction: revert;
+    }
+
+    #formularioAsistencia{
+        max-width: none!important;
+        margin-right: 0rem!important;
+    }
+    #asistencias {
+        width: 100%!important;
+        align-items: center;
+        align-content: center;
+    }
+    #asistencias h1{
+        width: 50vw !important;
+
+    }
+   
+    .asistenciaGrid1,
+    .pildorasGrid2,
+    .tareasGrid3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50vw;
+    }
+   .asistenciaGrid1 div,
+   .pildorasGrid2 div,
+   .tareasGrid3 div{
+       width: 70vw;
+       max-width: none!important;
+   }
+   #content{
+       min-height: none!important;
+   }
+   #Layer_1{
+       display: none;
+   }
+   #header{
+       align-items: center!important;
+   }
 }
 
 

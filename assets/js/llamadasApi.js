@@ -1,45 +1,64 @@
-//  NO TOCAR NADA DEL ARCHIVO
+const hostName = 'http://143.198.170.155';
 
-// Bloque de funciones "públicas"
+async function login(token, data = {}) {
+  // con los datos como raw json
+  data = {
+    email: 'john@doe.com',
+    password: 'password',
+    _token: token
+  }
+
+  return await apiPostCall(hostName + '/api/login',token,data);
+};
 
 async function listadoAsistencias(token) {
-  return await apiGetCall('http://163.172.135.235:3000/api/v1/events',token);
+  console.log(token);
+  return await apiGetCall(hostName + '/api/listadoFirmas',token);
 };
 
 async function registrarAsistencia(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  return await apiPostCall(hostName + '/api/firmar',token,data);
 };
 
 async function listadoTareas(token) {
-  return await apiGetCall('url al listado',token);
+  return await apiGetCall(hostName + '/api/listadoTareas',token);
 };
 
 async function crearTarea(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  // los datos en x-form-www-encoded
+  const sendData = new URLSearchParams();
+  sendData.append('titulo', 'john@doe.com');
+  sendData.append('descripcion', 'password');
+  sendData.append('estado', 1);
+  sendData.append('user_id', 1);
+  sendData.append('categoria_id', 1);
+  sendData.append('_token', token);
+
+  return await apiPostCall(hostName + '/api/crearTarea',token,sendData);
 };
 
-async function completarTarea(token, data = {}) {
-  return await apiPutCall('url al update',token,data);
+async function completarTarea(tarea, token, data = {}) {
+  return await apiPutCall(hostName + '/api/marcarTarea/' + tarea, token, data);
 };
 
-async function borrarTarea(token, data = {}) {
-  return await apiDeleteCall('url al delete',token,data);
+async function borrarTarea(tarea, token, data = {}) {
+  return await apiDeleteCall(hostName + '/api/borrarTarea/' + tarea,token,data);
 };
 
 async function listadoPildoras(token, data = 0) {
-  return await apiGetCall('url al listado',token);
+  return await apiGetCall(hostName + '/api/listadoPildoras',token);
 };
 
 async function crearPildora(token, data = {}) {
-  return await apiPostCall('url al create',token,data);
+  return await apiPostCall(hostName + '/api/crearPildora',token,data);
 };
 
-async function borrarPildora(token, data = {}) {
-  return await apiDeleteCall('url al delete',token,data);
+async function borrarPildora(pildora, token, data = {}) {
+  return await apiDeleteCall(hostName + '/api/borrarPildora/' + pildora,token,data);
 };
 
-async function actualizarPildora(token, data = {}) {
-  return await apiPutCall('url al update',token,data);
+async function actualizarPildora(pildora, token, data = {}) {
+  return await apiPutCall(hostName + '/api/marcarPildora/' + pildora,token,data);
 };
 
 // Bloque de funciones de llamadas por métodos
@@ -49,7 +68,7 @@ const apiGetCall = async (url, token = '') => {
 };
 
 const apiPostCall = async (url, token, data = {}) => {
-  return dataFetch('POST', url, token, data);
+  return simpleFetch('POST', url, token, data);
 };
 
 const apiPutCall = async (url, token, data = {}) => {
@@ -61,10 +80,11 @@ const apiDeleteCall = (url, token) => {
 };
 
 const simpleFetch = async (method, url, token, data = null) => {
-  let obj = { method: method, headers: { Authorization: `Bearer ${token}`,  'Content-Type': 'application/json' } };
+  let obj = { method: method, headers: {  Authorization: `Bearer ${token}`, 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' } };
   if (data !== null) {
-    obj.body = JSON.stringify(data);
+    obj.body =  data ;
   };
+  console.log(obj);
   const response = await fetch(url, obj);
   const res = response.json();
 
@@ -83,5 +103,6 @@ export {
   listadoPildoras,
   crearPildora,
   borrarPildora,
-  actualizarPildora
+  actualizarPildora,
+  login
 }
