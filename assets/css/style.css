@@ -186,10 +186,15 @@ border:none!important;
        min-height: none!important;
    }
    #Layer_1{
-       display: none;
+       /* display: none; */
    }
    #header{
        align-items: center!important;
+       flex-direction: row;
+   }
+
+   #header h1{
+       font-size: 9vw;
    }
 }
 
