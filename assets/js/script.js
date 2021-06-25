@@ -38,10 +38,13 @@ confirmar.addEventListener('click', ()=>{
   //   }
   // });
   // localStorage.setItem('token',JSON.stringify(logOutUser));
+  $('#sidebar').removeClass('active');
+  $('.overlay').removeClass('active');
   alerta.innerHTML = `<div class="alert alert-success alert-dismissable">
   <button type="button" class="close" data-dismiss="alert">&times;</button>
   Has cerrado sesión con éxito, vuelve pronto!
 </div>`
+
   setTimeout(
     function(){
         window.location.href = "../index.html";
