@@ -143,6 +143,7 @@ border:none!important;
     text-align: center;
 }
 
+
 @media screen and (max-width : 800px) {
     .d-flex{
     
@@ -191,4 +192,5 @@ border:none!important;
        align-items: center!important;
    }
 }
+
 
