@@ -35,7 +35,7 @@ logOut.addEventListener('click',  () =>{
           ¿Estás seguro de que quieres cerrar sesión?
         </div>
         <div class="modal-footer">
-          <button id="confirmar" type="button" class="btn btn-secondary" data-dismiss="modal">Sí, quiero confirmar.</button>
+          <button id="confirmar" type="button" class="btn btn-secondary" data-dismiss="modal">Sí, quiero salir.</button>
           <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero volver.</button>
         </div>
       </div>
