@@ -143,3 +143,38 @@ border:none!important;
     text-align: center;
 }
 
+@media screen and (max-width : 800px) {
+    .d-flex{
+    
+    flex-direction: column; 
+    }
+    
+    .alineadoBotones{
+        flex-direction: revert;
+    }
+
+    #formularioAsistencia{
+        max-width: none!important;
+        margin-right: 0rem!important;
+    }
+    #asistencias {
+        width: 100%!important;
+        align-items: center;
+        align-content: center;
+    }
+   
+    .asistenciaGrid1,
+    .pildorasGrid2,
+    .tareasGrid3{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+   .asistenciaGrid1 div,
+   .tareasGrid3 div{
+       width: 70vw;
+   }
+   #content{
+       min-height: none!important;
+   }
+}
