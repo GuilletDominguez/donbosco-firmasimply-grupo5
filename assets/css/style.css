@@ -209,7 +209,7 @@ border:none!important;
         display: flex;
         flex-direction: column;
     }
-    .btn-primary{
+    #btn-session{
         width: 80%!important;
         font-size: calc(0.8em + 1vw)!important;
         font-weight: bolder!important;
