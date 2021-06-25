@@ -222,6 +222,13 @@ border:none!important;
 #emailHelp{
     font-size: calc(0.5em + 1vw);
 }
+.letra h5, .letra p{
+    font-size: calc(0.7em + 1vw);
+}
 
+.textNew h5, .textNew p{
+    font-size: calc(0.7em + 1vw);
+    margin-bottom: .75rem!important;
+}
 }
 
