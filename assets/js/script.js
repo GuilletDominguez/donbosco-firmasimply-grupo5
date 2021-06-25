@@ -16,19 +16,8 @@ $(document).ready(function () {
     });
 });
 
-let logOut = document.getElementById('logOut');
 let alerta = document.getElementById('alerta')
 let confirmar = document.getElementById('confirmar')
-
-logOut.addEventListener('click',  () =>{
-
-
- 
-    
-   
-   
-});
-
 confirmar.addEventListener('click', ()=>{
     
   // const logOutUser = JSON.parse(localStorage.getItem('token'));
