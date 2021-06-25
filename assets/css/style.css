@@ -143,6 +143,7 @@ border:none!important;
     text-align: center;
 }
 
+
 @media screen and (max-width : 800px) {
     .d-flex{
     flex-direction: column; 
@@ -172,18 +173,16 @@ border:none!important;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 1vw;
+        width: 50vw;
     }
    .asistenciaGrid1 div,
    .pildorasGrid2 div,
    .tareasGrid3 div{
        width: 70vw;
+       max-width: none!important;
    }
    #content{
        min-height: none!important;
-   }
-   #Layer_1{
-
    }
 
    #header{
@@ -220,6 +219,7 @@ border:none!important;
     .form-group{
         margin: 0.5em 0 1.5em 0;
     }
+
 .form-group input{
     height: 8vh;
     margin-top: 2vh;
@@ -230,5 +230,6 @@ border:none!important;
 #emailHelp{
     font-size: calc(0.5em + 1vw);
 }
+
 }
 
