@@ -40,3 +40,25 @@ confirmar.addEventListener('click', ()=>{
     }, 3000);
 
 }); 
+
+function getCita(){
+    let quitaFallos = jQuery.noConflict();
+   quitaFallos.getJSON("https://raw.githubusercontent.com/bitgary/hola-mundo/master/citas.json", 
+       function(json){
+         var htmlCita = "", htmlAutor = "";
+         var citaAleatoria = Math.floor(Math.random() * json.length); 
+         htmlCita += json[citaAleatoria].cita;
+         htmlAutor += json[citaAleatoria].autor;  
+            $("#cita").html('``'+htmlCita+'``');
+         $("#autor").html(htmlAutor);
+      
+    });
+ }
+ 
+ getCita();
+ 
+ $(document).ready(function () {
+   $('#get-cita').click(function () {
+      getCita();
+   });
+ });

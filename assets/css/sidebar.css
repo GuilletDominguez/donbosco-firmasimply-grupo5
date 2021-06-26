@@ -190,4 +190,15 @@ a.article:hover {
     height: 50px;
 }
 
+.frase{
+    margin: 2vw;
+}
 
+#autor{
+    font-weight: bolder;
+}
+
+#get-cita{
+    margin-top: 3vh ;
+    cursor: pointer;
+}

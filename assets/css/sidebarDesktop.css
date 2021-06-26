@@ -394,3 +394,15 @@ a.article:hover {
     
 }
 
+.frase{
+    margin: 2vw;
+}
+#autor{
+    font-weight: bolder;
+    margin-bottom: 2vh;
+}
+
+#get-cita{
+    margin-top: 3vh ;
+    cursor: pointer;
+}
