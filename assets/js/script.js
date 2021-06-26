@@ -30,7 +30,7 @@ confirmar.addEventListener('click', ()=>{
   $('#sidebar').removeClass('active');
   $('.overlay').removeClass('active');
   alerta.innerHTML = `<div class="alert alert-success alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
+
   Has cerrado sesión con éxito, vuelve pronto!
 </div>`
 
