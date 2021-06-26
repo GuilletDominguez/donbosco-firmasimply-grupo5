@@ -105,7 +105,8 @@ a:focus
 }
 
 #sidebar ul li a:hover,
-#logOut:hover {
+#logOut:hover,
+#get-cita:hover {
     color: #7386D5;
     background: #fff;
 }
@@ -408,4 +409,6 @@ a.article:hover {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
 }
