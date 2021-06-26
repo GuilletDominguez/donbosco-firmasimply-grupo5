@@ -55,6 +55,7 @@ function getCita(){
     });
  }
  
+ 
  getCita();
  
  $(document).ready(function () {
