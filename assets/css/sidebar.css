@@ -191,7 +191,8 @@ a.article:hover {
 }
 
 .frase{
-    margin: 2vw;
+    margin: 4vw;
+   
 }
 
 #autor{
@@ -201,4 +202,9 @@ a.article:hover {
 #get-cita{
     margin-top: 3vh ;
     cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 5px;
 }

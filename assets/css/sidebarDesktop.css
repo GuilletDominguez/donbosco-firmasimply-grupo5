@@ -405,4 +405,7 @@ a.article:hover {
 #get-cita{
     margin-top: 3vh ;
     cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
 }
