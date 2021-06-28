@@ -13,12 +13,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <title>Firma Simply</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+    integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.min.css">
+
+
+  <link rel="stylesheet" href="assets/css/sidebar.css" media="screen and (max-width:800px)">
+  <link rel="stylesheet" href="assets/css/sidebarDesktop.css" media="screen and (min-width : 801px)">
+  <title>Registro Asistencia</title>
 </head>
 
 <body>
 
-  <header class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
+  <header id="header" class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
 
     <h1 class="tituloHeader">FIRMASIMPLY</h1>
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -61,159 +69,312 @@
       C735.901,182.864,733.985,182.72,730.174,186.044z" style="fill: rgb(255, 255, 255);"></path>
     </svg>
   </header>
-
-  <div class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
-    <form method="POST" action="" id="form"name="signin">
-      <div class="form-group">
-        <label for="exampleInputEmail1">Dirección de email</label>
-        <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-          placeholder="Introduce tu email">
-        <small id="emailHelp" class="form-text text-muted">No compartiremos nunca tu email con terceros.</small>
+  <div id="alerta"></div>
+  <div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar" class="animate__animated animate__slideInLeft">
+      <div id="dismiss">
+        <i class="fas fa-arrow-left"></i>
       </div>
-      <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" required class="form-control" id="exampleInputPassword1"
-          placeholder="Intoduce tu contraseña">
+
+      <div class="sidebar-header">
+        <h3>Menú</h3>
       </div>
-      <p id="mensaje"></p>
-      <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
-  </div>
-  
-  
-  
-  <nav></nav>
-  <section></section>
-  <section></section>
-  <aside></aside>
 
-   
+      <ul class="list-unstyled components">
+        <div id="perfil">
+          <img src="https://gcdn.emol.cl/hombres/files/2013/10/feo-8.jpg" alt="">
+          <p>Pepe peña</p>
+        </div>
+        <li>
+          <a href="registroAsistencia.html" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
 
-  <!-- Footer -->
-<footer class="bg-dark text-center text-white">
-  <!-- Grid container -->
-  <div class="container p-4">
-  
+        </li>
+        <li>
+          <a href="#"><i class="fas fa-capsules"></i> Pildora</a>
+        </li>
+        <li>
+          <a href="ListadeTareas.html"><i class="fas fa-list-ol"></i> Tareas</a>
+        </li>
+        <li>
+          <a id="logOut" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-sign-out-alt"></i>
+            Cerrar Sesión</a>
+        </li>
+      </ul>
+      <div class="frase">
+        
+        <blockquote id="cita">
+        </blockquote>
+        
+        <div class="autor-frase">
+         <span id="autor">
+        </div>
+      <p id="get-cita"> Cambiar frase <i class="fas fa-exchange-alt"></i> </p>
+      </div>
+    </nav>
 
-    <!-- Section: Form -->
-    <section class="">
-      <form action="">
-        <!--Grid row-->
-        <div class="row d-flex justify-content-center">
-          <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
-          <!--Grid column-->
+    <!-- --------------------------------------------------------------------------ENGLOBA TODA LA SECCIÓN CENTRAL------------------------------------------- -->
+    <div id="content">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
 
-          <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example2" class="form-control" />
-              <label class="form-label" for="form5Example2">Email address</label>
+          <button type="button" id="sidebarCollapse" class="btn btn-info pepe">
+            <i class="fas fa-align-left pepe"></i>
+
+          </button>
+        </div>
+      </nav>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de cierre de sesión</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              ¿Estás seguro de que quieres cerrar sesión?
+            </div>
+            <div class="modal-footer">
+              <button id="confirmar" type="submit" class="btn btn-secondary" data-dismiss="modal">Sí, quiero salir.</button>
+              <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero volver.</button>
             </div>
           </div>
-          <!--Grid column-->
-
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subscribe
-            </button>
-          </div>
-          <!--Grid column-->
         </div>
-        <!--Grid row-->
-      </form>
-    </section>
-    <!-- Section: Form -->
-
-    <!-- Section: Text -->
-    <section class="mb-4">
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt distinctio earum
-        repellat quaerat voluptatibus placeat nam, commodi optio pariatur est quia magnam
-        eum harum corrupti dicta, aliquam sequi voluptate quas.
-      </p>
-    </section>
-    <!-- Section: Text -->
-
-    <!-- Section: Links -->
-    <section class="">
-      <!--Grid row-->
-      <div class="row">
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-        <!--Grid column-->
-        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase">Links</h5>
-
-          <ul class="list-unstyled mb-0">
-            <li>
-              <a href="#!" class="text-white">Link 1</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 2</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 3</a>
-            </li>
-            <li>
-              <a href="#!" class="text-white">Link 4</a>
-            </li>
-          </ul>
-        </div>
-        <!--Grid column-->
-
-       
       </div>
-      <!--Grid row-->
-    </section>
-    <!-- Section: Links -->
-  </div>
-  <!-- Grid container -->
+      <div class="overlay"></div>
+    </div>
+    <!-- --------------------------------------------------------------------------CONTENEDOR BODY---------------------------------------------------------- -->
+    <div
+      class=" animate__animated animate__fadeIn container h-100 w-100  d-flex justify-content-center align-items-start ">
+      <!-- --------------------------------------------------------------------------REGISTRO DE ASISTENCIA------------------------------------------------- -->
+      <div class="card info mr-5 mb-3" id="formularioAsistencia" style="max-width: 18rem;">
+        <div class="card-header text">Registro de asistencia</div>
+        <div class="card-body text-info">
+          <h5 class="card-title text"><strong>Confirme su asistencia de hoy</strong></h5>
+          <p class="card-text text">Pulse el botón de "Entrada" para validar la entrada a clase de hoy o "Salida" para
+            validar la salida de clase.</p>
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2021 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+          <div class="form-group">
+            <label class="text" for="exampleFormControlTextarea1">Nota para adjuntar</label>
+            <textarea style="resize: none;" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+
+          <div class="form-check mb-3 form-check-inline">
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+            <label class="form-check-label text" for="inlineCheckbox1">Confirmar adjuntar nota</label>
+          </div>
+
+
+          <div class="alineadoBotones w-100 d-flex justify-content-around align-items-center">
+            <button type="button" id="tooltipt" data-toggle="tooltip" data-placement="bottom"
+              title="Recuerda que puedes añadir una nota antes de enviar tu entrada de clase"
+              class="btn btn-primary ">Entrada</button>
+            <button type="button" data-toggle="tooltip" data-placement="bottom"
+              title="Recuerda que puedes añadir una nota antes de enviar tu salida de clase"
+              class="btn btn-primary">Salida</button>
+          </div>
+        </div>
+      </div>
+      <!-- --------------------------------------------------------------------------GRIDS---------------------------------------------------------- -->
+      <div class="containerflex w-50 d-flex flex-column" id="asistencias">
+        <!-- --------------------------------------------------------------------------ASISTENCIAS---------------------------------------------------------- -->
+        <h1 style="text-align: center;">Asistencias</h1>
+        <div class="asistenciaGrid1">
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body letra">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <div class="d-flex">
+                <p class="card-text mr-3">Entrada: 8:31H</p>
+                <p class="card-text">Salida: 15:30H</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body letra">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <div class="d-flex">
+                <p class="card-text mr-3">Entrada: 8:31H</p>
+                <p class="card-text">Salida: 15:30H</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body letra">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <div class="d-flex">
+                <p class="card-text mr-3">Entrada: 8:31H</p>
+                <p class="card-text">Salida: 15:30H</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body letra">
+              <h5 class="card-title">Día: 19/06/2021</h5>
+              <div class="d-flex">
+                <p class="card-text mr-3">Entrada: 8:31H</p>
+                <p class="card-text">Salida: 15:30H</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- --------------------------------------------------------------------------TAREAS---------------------------------------------------------- -->
+        <h1 class="mt-3" style="text-align: center;">Píldoras</h1>
+        <div class="pildorasGrid2">
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body textNew">
+              <h5 class="card-title">Typescript</h5>
+              <p class="card-text">Alumno: Guillermo Disousa</p>
+              <p class="card-text">Aprende conceptos básicos de Typescript</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body textNew">
+              <h5 class="card-title">Typescript</h5>
+              <p class="card-text">Alumno: Guillermo Disousa</p>
+              <p class="card-text">Aprende conceptos básicos de Typescript</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body textNew">
+              <h5 class="card-title">Typescript</h5>
+              <p class="card-text">Alumno: Guillermo Disousa</p>
+              <p class="card-text">Aprende conceptos básicos de Typescript</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body textNew">
+              <h5 class="card-title">Typescript</h5>
+              <p class="card-text">Alumno: Guillermo Disousa</p>
+              <p class="card-text">Aprende conceptos básicos de Typescript</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- --------------------------------------------------------------------------TAREAS---------------------------------------------------------- -->
+        <h1 class="mt-3" style="text-align: center;">Tareas</h1>
+        <div class="tareasGrid3">
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body textNew">
+              <h5 class="card-title">Práctica BookList</h5>
+              <p class="card-text">Fecha limite entrega</p>
+              <p class="card-text">21/07/2021</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body textNew">
+              <h5 class="card-title">Práctica BookList</h5>
+              <p class="card-text">Fecha limite entrega</p>
+              <p class="card-text">21/07/2021</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body textNew">
+              <h5 class="card-title">Práctica BookList</h5>
+              <p class="card-text">Fecha limite entrega</p>
+              <p class="card-text">21/07/2021</p>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3" >
+            <div class="card-body textNew">
+              <h5 class="card-title">Práctica BookList</h5>
+              <p class="card-text">Fecha limite entrega</p>
+              <p class="card-text">21/07/2021</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <!-- Copyright -->
-</footer>
-<!-- Footer -->
+
+  <!-- Footer -->
+  <footer class="bg-dark text-center text-white miFooter">
+    <!-- Grid container -->
+    <div class="container p-4">
+
+
+      <!-- Section: Form -->
+     
+      <!-- Section: Text -->
+      <section class="mb-4">
+        <p>
+          Realizado por Matías, Guillermo, Ruben, Aurora y Mohammad.
+        </p>
+      </section>
+      <!--ENLACES DE INTERES  -->
+      <div class="columnas">
+        <div class="cajitas">
+        
+          <ul class="enlaces">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
+        <div class="cajitas">
+        
+          <ul class="enlaces">
+            <li><a href="#">Link</a></li>
+            <li><a href="#">Link</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2021 Copyright:
+        <a class="text-white"
+          href="https://mdbootstrap.com/">https://github.com/GuilletDominguez/donbosco-firmasimply-grupo5.git</a>
+      </div>
+      <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+
+
+
+
 </body>
+<!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA PRINCIPAL (index.html) -->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module" src="assets/js/firmasimply/app.js"></script>
+<script type="module" src="assets/js/firmasimply/logout.js"></script>
+<script type="module" src="assets/js/firmasimply/index.js"></script>
+
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/login.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+  crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
+<script src="assets/js/main.js"></script>
+<script src="assets/js/script.js"></script>
+
+
+</html>
