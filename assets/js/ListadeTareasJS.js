@@ -60,25 +60,23 @@ class Book {
         <td>${book.categoria}</td>
         <td>${book.descripcion}</td>
 		    <td>${book.fecha}</td>
-        <td><a href="#"  class="btn btn-success btn-sm success success2 ">&#10004;</a> </td>
         <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-        
+        <td><a href="#" class="btn btn-success btn-sm success ">&#10004;</a> </td>
       `;
-
-      
-  
+ //
       list.appendChild(row);
     }
+
   
-   static doneBook(al) {
-      if(al.classList.contains('success')) {
-         // row.style.background="green";
+    static doneBook(al) {
+     if(al.classList.contains('success')) {
+          // row.style.background="green";
       al.parentElement.parentElement.style.background="#76e055";
      }
 
     }
       
-    
+   
 
     // static doneBook2(la) {
      
@@ -93,26 +91,30 @@ class Book {
 
     static deleteBook(el) {
 
-      
        if(el.classList.contains('delete')) {
           var x = confirm("¿Estás seguro/a de que quieres eliminarlo?");
-          x = 
-         el.parentElement.parentElement.remove();
+          if (confirm == true) { 
+          x =  el.parentElement.parentElement.remove();
+        }
+        else { return false}
+       
        }
       }
-    // static showAlert(message, className) {
-    //   const div = document.createElement('div');
-    //   div.className = `alert alert-${className}`;
-    //   div.appendChild(document.createTextNode(message));
+
+
+     static showAlert(message, className) {
+       const div = document.createElement('div');
+       div.className = `alert alert-${className}`;
+       div.appendChild(document.createTextNode(message));
       
       
-    //   const container = document.querySelector('.container');
-    //   const form = document.querySelector('#flexbox');
-    //   container.insertBefore(div, form); 
-  
-    //   // Vanish in 3 seconds
-    //   setTimeout(() => document.querySelector('.alert').remove(), 3000);
-    // }
+       const container = document.querySelector('.container');
+       const form = document.querySelector('#flexbox');
+       container.insertBefore(div, form); 
+
+      // Vanish in 3 seconds
+       setTimeout(() => document.querySelector('.alert').remove(), 3000);
+     }
 	
     static clearFields() {
       document.querySelector('#nombre').value = '';
@@ -130,6 +132,7 @@ class Book {
         books = [];
       } else {
         books = JSON.parse(localStorage.getItem('books'));
+        
       }
   
       return books;
@@ -139,19 +142,37 @@ class Book {
       const books = Store.getBooks();
       books.push(book);
       localStorage.setItem('books', JSON.stringify(books));
+      
     }
+
   
-    static removeBook(nombre) {
+    // static savecolor(fecha) {
+    //   const books = Store.getBooks();
+  
+    //   books.forEach((book, index) => {
+    //     if(book.fecha === fecha) {
+    //       books.splice(index, 1);
+    //     }
+    //   });
+  
+    //   localStorage.setItem('books', JSON.stringify(books));
+     
+    // }
+
+  
+    static removeBook(fecha) {
       const books = Store.getBooks();
   
       books.forEach((book, index) => {
-        if(book.nombre === nombre) {
+        if(book.fecha === fecha) {
           books.splice(index, 1);
         }
       });
   
       localStorage.setItem('books', JSON.stringify(books));
+     
     }
+
   }
   
 
@@ -194,24 +215,26 @@ class Book {
   document.querySelector('#book-list').addEventListener('click', (e) => {
     
     
-    
+    // check mark Done from UI
+
+     UI.doneBook(e.target);
+
+     //console.log(e.target);
+
+    //  Store.savecolor(e.target.parentElement.previousElementSibling.textContent);
+     
     
     // Remove book from UI
     UI.deleteBook(e.target);
 
     
     
-  
-    // check mark Done from UI
-     UI.doneBook(e.target);
+
     
-  
-    
-  
-     
- 
     // Remove book from store
      Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+
+     
   
     // Show success message
     // UI.showAlert('Tarea eliminada', 'info');
