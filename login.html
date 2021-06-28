@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="en">
 
 <head>
-  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  
   <meta charset="UTF-8" />
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -64,20 +65,20 @@
 
   <div id="contenedorbody"
     class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
-    <form method="POST" action="" id="form" name="signin">
+    <form id="form" name="signin">
       <div class="form-group">
-        <label for="exampleInputEmail1">Dirección de email</label>
-        <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+        <label for="email">Dirección de email</label>
+        <input type="email"  class="form-control email" id="email" aria-describedby="emailHelp"
           placeholder="Introduce tu email">
         <small id="emailHelp" class="form-text text-muted">No compartiremos nunca tu email con terceros.</small>
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" required class="form-control" id="exampleInputPassword1"
+        <label for="password">Contraseña</label>
+        <input type="password"  class="form-control contraseña" id="password"
           placeholder="Intoduce tu contraseña">
       </div>
       <p id="mensaje"></p>
-      <button type="submit" id="btn-session"class="btn btn-primary">Enviar</button>
+      <button  id="btn-session"class="btn btn-primary">Enviar</button>
     </form>
   </div>
 
@@ -125,8 +126,9 @@
   </footer>
   <!-- Footer -->
 </body>
-<script type="module" src="assets/js/firmasimply/app.js"></script>
-<script type="module" src="assets/js/firmasimply/login.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module" src="/assets/js/firmasimply/app.js"></script>
+<script type="module" src="/assets/js/firmasimply/login.js"></script>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -134,6 +136,6 @@
   integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-<script src="assets/js/main.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="/assets/js/main.js"></script>
+
 </html>

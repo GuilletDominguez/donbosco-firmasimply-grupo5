@@ -7,5 +7,5 @@ if(document.querySelector('#logout') != null) {
 
 async function logout() {
   await Auth.logout();
-  window.location.assign("http://127.0.0.1:5500/login.html");
+  window.location.assign("http://127.0.0.1:5501/index.html");
 }
