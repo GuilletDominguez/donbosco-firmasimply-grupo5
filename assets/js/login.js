@@ -1,9 +1,15 @@
 import {
   login
   } from './llamadasApi.js';
-        var email = document.getElementById('exampleInputEmail1').value;
-        var password = document.getElementById('exampleInputPassword1').value;
-var x = await login()
+        let email = document.getElementById('exampleInputEmail1').value;
+        let password = document.getElementById('exampleInputPassword1').value;
+        data = {
+            email : email,
+            password: password,
+            _token : token
+
+        }
+       login(token, data = {})
                     setTimeout(
                         function(){
                             window.location.href = "assets/registroAsistencia.html";

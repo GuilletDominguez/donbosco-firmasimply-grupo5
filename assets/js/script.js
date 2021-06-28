@@ -20,9 +20,9 @@ let alerta = document.getElementById('alerta')
 let confirmar = document.getElementById('confirmar')
 confirmar.addEventListener('click', ()=>{
     
-  // const logOutUser = JSON.parse(localStorage.getItem('token'));
+  // const logOutUser = JSON.parse(localStorage.getItem('body'));
   // logOutUser.forEach((token, index) => {
-  //   if(token.token === token){
+  //   if(token._token === token){
   //   logOutUser.splice(index, 1)
   //   }
   // });
