@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
@@ -56,3 +57,10 @@ function getCita(){
       getCita();
    });
  });
+
+ $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+ 
+ 

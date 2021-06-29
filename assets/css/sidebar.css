@@ -183,6 +183,7 @@ a.article:hover {
     display: flex;
     border-bottom:  1px solid white !important;
     padding-left: 30px;
+    padding-bottom: 1vh;
    
 }
 #perfil > img{
@@ -208,4 +209,8 @@ a.article:hover {
     align-items: center;
     border: 1px solid white;
     border-radius: 5px;
+}
+
+#usuario{
+    font-size: calc(0.5em + 0.5vw);
 }
