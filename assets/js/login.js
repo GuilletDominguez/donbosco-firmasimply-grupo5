@@ -1,11 +1,12 @@
-import {
-  login
-  } from './llamadasApi.js';
-        var email = document.getElementById('exampleInputEmail1').value;
-        var password = document.getElementById('exampleInputPassword1').value;
-var x = await login()
-                    setTimeout(
-                        function(){
-                            window.location.href = "assets/registroAsistencia.html";
-                        }, 3000);
-   
+  
+import Auth from './Modules/Auth/Auth.js';
+
+if(document.querySelector('#logout') != null) {
+  const btnLogout = document.querySelector('#logout');
+  btnLogout.addEventListener('click', logout, false);
+}
+
+async function logout() {
+  await Auth.logout();
+  window.location.assign("http://127.0.0.1:5500/login.html");
+}
