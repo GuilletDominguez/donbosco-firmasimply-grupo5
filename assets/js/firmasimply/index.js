@@ -6,7 +6,9 @@ import Pildora from './Modules/Pildora.js';
 //Informacion Dinámica del usuario logueado
 let infoCoder = Auth.getCoder()
 let emailUser = document.getElementById('usuario');
-emailUser.innerHTML = infoCoder.name;
+ emailUser.innerHTML = infoCoder.name;
+
+
 
 ////////////////////////////////////////////////////////////////////////Funcionalidad de Firmar//////////////////////////////////////
 
