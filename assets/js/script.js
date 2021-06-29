@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
@@ -19,14 +20,7 @@ $(document).ready(function () {
 let alerta = document.getElementById('alerta')
 let confirmar = document.getElementById('confirmar')
 confirmar.addEventListener('click', ()=>{
-    
-  // const logOutUser = JSON.parse(localStorage.getItem('token'));
-  // logOutUser.forEach((token, index) => {
-  //   if(token.token === token){
-  //   logOutUser.splice(index, 1)
-  //   }
-  // });
-  // localStorage.setItem('token',JSON.stringify(logOutUser));
+ 
   $('#sidebar').removeClass('active');
   $('.overlay').removeClass('active');
   alerta.innerHTML = `<div class="alert alert-success alert-dismissable">
@@ -45,8 +39,8 @@ function getCita(){
     let quitaFallos = jQuery.noConflict();
    quitaFallos.getJSON("https://raw.githubusercontent.com/GuilletDominguez/myBookList/master/citas.json", 
        function(json){
-         var htmlCita = "", htmlAutor = "";
-         var citaAleatoria = Math.floor(Math.random() * json.length); 
+         let htmlCita = "", htmlAutor = "";
+         let citaAleatoria = Math.floor(Math.random() * json.length); 
          htmlCita += json[citaAleatoria].cita;
          htmlAutor += json[citaAleatoria].autor;  
             $("#cita").html(htmlCita);
@@ -63,3 +57,10 @@ function getCita(){
       getCita();
    });
  });
+
+ $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+ 
+ 
