@@ -1,4 +1,3 @@
-  
 import Auth from './Modules/Auth/Auth.js';
 
 if(document.querySelector('#logout') != null) {
