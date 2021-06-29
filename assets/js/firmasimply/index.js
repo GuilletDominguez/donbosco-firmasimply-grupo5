@@ -308,5 +308,6 @@ else if(checknota.checked == true && nota !== ''){
   setTimeout(
       function(){
       alerta.innerHTML = ''},3000);
+      }
     }
-    }
+}}}}
