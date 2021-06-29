@@ -19,14 +19,7 @@ $(document).ready(function () {
 let alerta = document.getElementById('alerta')
 let confirmar = document.getElementById('confirmar')
 confirmar.addEventListener('click', ()=>{
-    
-  // const logOutUser = JSON.parse(localStorage.getItem('body'));
-  // logOutUser.forEach((token, index) => {
-  //   if(token._token === token){
-  //   logOutUser.splice(index, 1)
-  //   }
-  // });
-  // localStorage.setItem('token',JSON.stringify(logOutUser));
+ 
   $('#sidebar').removeClass('active');
   $('.overlay').removeClass('active');
   alerta.innerHTML = `<div class="alert alert-success alert-dismissable">
