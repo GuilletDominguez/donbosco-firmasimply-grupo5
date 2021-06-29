@@ -77,7 +77,7 @@
                                             class="fa fa-user bigicon"></i></span>
                                     <div class="col-md-8">
                                         <label for="">Nombre</label>
-                                        <input id="fname" name="name" type="text" placeholder="Nombre"
+                                        <input id="name" name="name" type="text" placeholder="Nombre"
                                             class="form-control">
                                     </div>
                                 </div>
@@ -102,7 +102,7 @@
                                 </div>
                                 <div class="form-group num2">
                                     <div class="col-md-12 text-center">
-                                        <button type="submit" class="btn btn-primary btn-lg">Enviar</button>
+                                        <button onclick="crearPildora()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
                                     </div>
                                 </div>
                             </fieldset>
@@ -155,6 +155,11 @@
     </footer>
     <!-- Footer -->
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module" src="js/firmasimply/app.js"></script>
+<script type="module" src="js/firmasimply/logout.js"></script>
+<script type="module" src="js/firmasimply/index.js"></script>
+<script type="module" src="js/firmasimply/pildoras.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
@@ -164,9 +169,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-<script src="assets/js/main.js"></script>
-<script src="assets/js/login.js"></script>
+<script src="js/main.js"></script>
+<script src="js/login.js"></script>
+<script src="js/formulario-pildoras.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </html>
