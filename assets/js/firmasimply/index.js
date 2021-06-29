@@ -32,27 +32,42 @@ async function grabarEntrada(e){
 
 //Captura de nota adjunta
 let nota = document.getElementById("notaAdjunta").value;
-let checknota = document.getElementById("check")
+let checknota = document.getElementById("check");
+let alerta = document.getElementById('notaMsg');
 
 if(checknota.checked == true  && nota == ''){
-    alert('Por favor introduzca una nota')
+    alerta.innerHTML = `<div class="alert alert-danger" role="alert">
+    Por favor introduzca una nota
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000
+  )
 }
-else if(checknota.checked == false && nota !=='')
-{
-    alert('Por favor confime que quiere añadir la nota')
+else if(checknota.checked == false && nota !==''){
 
+    alerta.innerHTML = `<div class="alert alert-danger" role="alert">
+    Por favor confirme que quiere añadir la nota
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
+  
 }
 else if(checknota.checked == true && nota !== ''){
     nota = nota
-    alert('su nota se ha añadido con exito')
     let firmaEntrada = {
         user_id: infoCoder.id,
         nota: nota,
         // 1 para entrada, 0 para salida
         estado: 1 }
     await Asistencia.firmar(firmaEntrada)
-    alert('se ha registrado la entrada')
-    console.log(getListadoFirmas())
+    alerta.innerHTML = `<div class="alert alert-success" role="alert">
+    Su nota se ha añadido  y se ha registrado su entrada con éxito
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
 
 }else if(checknota.checked == false && nota == ''){
     let firmaEntrada = {
@@ -61,37 +76,56 @@ else if(checknota.checked == true && nota !== ''){
         // 1 para entrada, 0 para salida
         estado: 1 }
     await Asistencia.firmar(firmaEntrada)
-    alert('se ha registrado la entrada')
-    console.log(getListadoFirmas())
+    alerta.innerHTML = `<div class="alert alert-success" role="alert">
+    Su entrada se ha registrado con éxito
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
     }
 }
 
 //------------------------------------------------------------- Funcionalidad de Firmar Salida
 async function grabarSalida(e){
     e.preventDefault()
-
+    let alerta = document.getElementById('notaMsg');
 //Captura de nota adjunta
 let nota = document.getElementById("notaAdjunta").value
 let checknota = document.getElementById("check")
 if(checknota.checked == true  && nota == ''){
-    alert('Por favor introduzca una nota')
+    alerta.innerHTML = `<div class="alert alert-danger" role="alert">
+    Por favor introduzca una nota
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000
+  )
 }
 else if(checknota.checked == false && nota !=='')
 {
-    alert('por favor confime que quiere añadir la nota')
+    alerta.innerHTML = `<div class="alert alert-danger" role="alert">
+    Por favor confirme que quiere añadir la nota
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
 
 }
 else if(checknota.checked == true && nota !== ''){
     nota = nota
-    alert('su nota se ha añadido con exito')
+  
     let firmaSalida = {
         user_id: infoCoder.id,
         nota: nota,
         // 1 para entrada, 0 para salida
         estado: 0 }
     await Asistencia.firmar(firmaSalida)
-    alert('se ha registrado la salida')
-    console.log(getListadoFirmas())
+    alerta.innerHTML = `<div class="alert alert-success" role="alert">
+    Su nota se ha añadido  y se ha registrado su salida con éxito
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
 
 }else if(checknota.checked == false && nota == ''){
     let firmaSalida = {
@@ -100,7 +134,11 @@ else if(checknota.checked == true && nota !== ''){
         // 1 para entrada, 0 para salida
         estado: 0 }
     await Asistencia.firmar(firmaSalida)
-    alert('se ha registrado la salida')
-    console.log(getListadoFirmas())
+    alerta.innerHTML = `<div class="alert alert-success" role="alert">
+    Su salida se ha registrado con éxito
+  </div>`
+  setTimeout(
+      function(){
+      alerta.innerHTML = ''},3000);
     }
-}
+    }
