@@ -26,7 +26,6 @@ let btnSalida = document.getElementById("salida");
 btnSalida.addEventListener("click",grabarSalida,false)
 
 
-
 //------------------------------------------------------------- Funcionalidad de Firmar Entrada
 async function grabarEntrada(e){
     e.preventDefault()
@@ -35,8 +34,7 @@ async function grabarEntrada(e){
 let nota = document.getElementById("notaAdjunta").value;
 let checknota = document.getElementById("check");
 let alerta = document.getElementById('notaMsg');
-
-if(checknota.checked == true  && nota == ''){
+ if(checknota.checked == true  && nota == ''){
     alerta.innerHTML = `<div class="alert alert-danger" role="alert">
     Por favor introduzca una nota
   </div>`
@@ -143,3 +141,6 @@ else if(checknota.checked == true && nota !== ''){
       alerta.innerHTML = ''},3000);
     }
     }
+
+
+

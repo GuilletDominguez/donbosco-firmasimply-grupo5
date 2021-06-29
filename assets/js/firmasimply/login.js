@@ -2,8 +2,8 @@ import Auth from './Modules/Auth/Auth.js';
 
 const DASHBOARD_URL = '/index.html';
 
-const btnLogin = document.querySelector('#login');
-btnLogin.addEventListener('click', login, false);
+const btnLogin = document.querySelector('#form');
+btnLogin.addEventListener('submit', login, false);
 let mensajeError = document.getElementById('mensaje');
 async function login(e) {
   e.preventDefault()
