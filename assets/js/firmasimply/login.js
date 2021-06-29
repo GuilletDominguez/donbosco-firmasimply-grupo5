@@ -39,15 +39,4 @@ let password = document.getElementById('password').value;
 
   setTimeout(
     function(){window.location.assign(DASHBOARD_URL)},3000)
-
-  </div>`}
-  else{
-  mensajeError.innerHTML = `<div class="alert alert-success" role="alert">
-  Has iniciado sesión con éxito espere!
-  </div>`
   }
-
- 
-  await Auth.login(CODER);
-  window.location.assign(DASHBOARD_URL);
-}
