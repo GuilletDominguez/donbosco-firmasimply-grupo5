@@ -1,0 +1,103 @@
+
+.form-group{
+    width: 50% ;
+}
+#Nombre {
+    width:50%;
+}
+
+#Categoria {
+    width:50%; 
+}
+
+#Descripcion {
+    width:50%;
+    height: 100px;
+    background-color: white;
+   
+}
+
+#editsubmit{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#flexbox{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  
+}
+
+#book-form{
+  
+    width: 154%;
+
+}
+
+#leftside {
+      width: 50%;
+
+order: 1;
+}
+
+
+#Estadísticas{
+   order: 2;
+}
+
+
+#here2{
+    margin-top: 50px;
+=======
+.form-group{
+    width: 50% ;
+}
+#Nombre {
+    width:50%;
+}
+
+#Categoria {
+    width:50%; 
+}
+
+#Descripcion {
+    width:50%;
+    height: 100px;
+    background-color: white;
+   
+}
+
+#editsubmit{
+    width: 50%;
+    margin-bottom: 10px;
+}
+
+#flexbox{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  
+}
+
+#book-form{
+  
+    width: 154%;
+
+}
+
+#leftside {
+      width: 50%;
+
+order: 1;
+}
+
+
+#Estadísticas{
+   order: 2;
+}
+
+
+#here2{
+    margin-top: 50px;
+}

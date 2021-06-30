@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html lang="es-ES">
+<html lang="en">
 
 <head>
-  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+  
   <meta charset="UTF-8" />
   <meta name="HandheldFriendly" content="true">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT"
-    crossorigin="anonymous"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
@@ -34,7 +29,7 @@
         <h3>Menú</h3>
       </div>
 
-  <header class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
+  <header id="header" class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
 
     <h1 class="tituloHeader">FIRMASIMPLY</h1>
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -78,18 +73,46 @@
     </svg>
   </header>
 
+  <div id="contenedorbody"
+    class=" animate__animated animate__fadeIn container h-75 w-50 d-flex justify-content-center align-items-start mt-5">
+    <form id="form" >
+      <div class="form-group">
+        <label for="email">Dirección de email</label>
+        <input type="email"  class="form-control email" id="email" aria-describedby="emailHelp"
+          placeholder="Introduce tu email">
+        <small id="emailHelp" class="form-text text-muted">No compartiremos nunca tu email con terceros.</small>
+      </div>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password"  class="form-control contraseña" id="password"
+          placeholder="Intoduce tu contraseña">
+      </div>
+      <p id="mensaje"></p>
+
+<<<<<<< HEAD:assets/ListadeTareas.html
 
 
 
 
+=======
+      <button type="submit" id="login"class="btn btn-primary">Enviar</button>
 
+    </form>
+  </div>
+
+>>>>>>> main:login.html
 
   <!-- Footer -->
-  <footer class="bg-dark text-center text-white">
+  <footer class="bg-dark text-center text-white miFooter">
     <!-- Grid container -->
     <div class="container p-4">
 
 
+<<<<<<< HEAD:assets/ListadeTareas.html
+=======
+      <!-- Section: Form -->
+     
+>>>>>>> main:login.html
       <!-- Section: Text -->
       <section class="mb-4">
         <p>
@@ -125,11 +148,24 @@
   </footer>
   <!-- Footer -->
 </body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="module" src="/assets/js/firmasimply/app.js"></script>
+<script type="module" src="/assets/js/firmasimply/login.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<<<<<<< HEAD:assets/ListadeTareas.html
 <script src="../assets/js/main.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="module" src="/assets/js/firmasimply/app.js"></script>
 <script type="module" src="/assets/js/firmasimply/logout.js"></script>
 <script type="module" src="/assets/js/firmasimply/tareas.js"></script>
+=======
+>>>>>>> main:login.html
 
 </html>

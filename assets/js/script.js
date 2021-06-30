@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     $("#sidebar").mCustomScrollbar({
         theme: "minimal"
@@ -16,32 +17,14 @@ $(document).ready(function () {
     });
 });
 
-let logOut = document.getElementById('logOut');
 let alerta = document.getElementById('alerta')
 let confirmar = document.getElementById('confirmar')
-
-logOut.addEventListener('click',  () =>{
-
-
- 
-    
-   
-   
-});
-
 confirmar.addEventListener('click', ()=>{
-    
-  // const logOutUser = JSON.parse(localStorage.getItem('token'));
-  // logOutUser.forEach((token, index) => {
-  //   if(token.token === token){
-  //   logOutUser.splice(index, 1)
-  //   }
-  // });
-  // localStorage.setItem('token',JSON.stringify(logOutUser));
+ 
   $('#sidebar').removeClass('active');
   $('.overlay').removeClass('active');
   alerta.innerHTML = `<div class="alert alert-success alert-dismissable">
-  <button type="button" class="close" data-dismiss="alert">&times;</button>
+
   Has cerrado sesión con éxito, vuelve pronto!
 </div>`
 
@@ -51,3 +34,33 @@ confirmar.addEventListener('click', ()=>{
     }, 3000);
 
 }); 
+
+function getCita(){
+    let quitaFallos = jQuery.noConflict();
+   quitaFallos.getJSON("https://raw.githubusercontent.com/GuilletDominguez/myBookList/master/citas.json", 
+       function(json){
+         let htmlCita = "", htmlAutor = "";
+         let citaAleatoria = Math.floor(Math.random() * json.length); 
+         htmlCita += json[citaAleatoria].cita;
+         htmlAutor += json[citaAleatoria].autor;  
+            $("#cita").html(htmlCita);
+         $("#autor").html(htmlAutor);
+      
+    });
+ }
+ 
+ 
+ getCita();
+ 
+ $(document).ready(function () {
+   $('#get-cita').click(function () {
+      getCita();
+   });
+ });
+
+ $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+ 
+ 
