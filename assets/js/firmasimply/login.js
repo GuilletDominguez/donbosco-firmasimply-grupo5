@@ -17,13 +17,7 @@ await comprobarEmail()
    
       if(email == '' || password == ''){
 
-        mensajeError.innerHTML = `<div class="alert alert-danger" role="alert"> Introduzca datos de 
-        Email y/o Contraseña correcto!
-    
-      </div>`
-      setTimeout(
-        function(){
-          mensajeError.innerHTML = ''},3000)
+    return fallo()
     
     }
       else if(email == email && password == password){
@@ -47,4 +41,12 @@ await comprobarEmail()
             setTimeout(
               function(){window.location.assign(DASHBOARD_URL)},3000)
       }
-  
+  function fallo(){
+    mensajeError.innerHTML = `<div class="alert alert-danger" role="alert"> Introduzca datos de 
+    Email y/o Contraseña correcto!
+
+  </div>`
+  setTimeout(
+    function(){
+      mensajeError.innerHTML = ''},3000)
+  }
