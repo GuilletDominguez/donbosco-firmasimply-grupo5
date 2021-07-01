@@ -2,7 +2,8 @@
 <html lang="es-ES">
 
 <head>
-    <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+    
+     <link href="assets/css/style.css" rel="stylesheet" type="text/css" /> 
     <meta charset="UTF-8" />
     <meta name="HandheldFriendly" content="true">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -13,11 +14,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css" />
     <link rel="stylesheet" href="assets/css/ListadeTareasCSS.css" />
-
+    <link rel="stylesheet" href="assets/css/sidebar.css" media="screen and (max-width:800px)">
+    <link rel="stylesheet" href="assets/css/sidebarDesktop.css" media="screen and (min-width : 801px)">
     <title>Lista de Tareas</title>
 </head>
 
@@ -67,19 +69,92 @@
       C735.901,182.864,733.985,182.72,730.174,186.044z" style="fill: rgb(255, 255, 255);"></path>
         </svg>
     </header>
-
-
-    <div class="container mt-4">
+    <div class="wrapper">
+    <nav id="sidebar" class="animate__animated animate__slideInLeft">
+        <div id="dismiss">
+          <i class="fas fa-arrow-left"></i>
+        </div>
+  
+        <div class="sidebar-header">
+          <h3>Menú</h3>
+        </div>
+  
+        <ul class="list-unstyled components">
+          <div id="perfil">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlM1E58FgxP7oLCX6FyrzMdmH5eICwCNpofw&usqp=CAU" alt="">
+            <p id="usuario"></p>
+          </div>
+          <li>
+            <a href="registroAsistencia.html" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
+  
+          </li>
+          <li>
+            <a href="Pildoras.html"><i class="fas fa-capsules"></i> Pildora</a>
+          </li>
+          <li>
+            <a href="ListadeTareas.html"><i class="fas fa-list-ol"></i> Tareas</a>
+          </li>
+          <li>
+            <a id="logOut" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-sign-out-alt"></i>
+              Cerrar Sesión</a>
+          </li>
+        </ul>
+        <div class="frase">
+          
+          <blockquote id="cita">
+          </blockquote>
+          
+          <div class="autor-frase">
+           <span id="autor">
+          </div>
+        <p id="get-cita"> Cambiar frase <i class="fas fa-exchange-alt"></i> </p>
+        </div>
+      </nav>
+  
+      <!-- --------------------------------------------------------------------------ENGLOBA TODA LA SECCIÓN CENTRAL------------------------------------------- -->
+      
+      <div id="content" style="z-index: 0;">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+  
+            <button type="button" id="sidebarCollapse" class="btn btn-info pepe">
+              <i class="fas fa-align-left pepe"></i>
+  
+            </button>
+          </div>
+        </nav>
+        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Confirmación de cierre de sesión</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                ¿Estás seguro de que quieres cerrar sesión?
+              </div>
+              <div class="modal-footer">
+                <button id="confirmar" type="submit" class="btn btn-secondary" data-dismiss="modal">Sí, quiero salir.</button>
+                <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero volver.</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </div>
+      <div class="container mt-4" style="z-index: 1;">
 
         <h1 class="display-4 text-center">
-            <i class="fas fa-pencil text-primary"></i>  Lista  <span class="text-primary"
+            <i class="fas fa-pencil text-primary"></i>  Lista  <span class="text-primary"
            >de </span
             >Tareas
         </h1>
         
         <div id="flexbox"> 
             <div id="leftside"> 
-        <form id="book-form">
+        <form id="book-form" >
             <div class="form-group">
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" class="form-control" />
@@ -100,7 +175,7 @@
                 
                 <textarea id="descripcion" name="descripcion" placeholder="Escribe algo.." class="form-control"></textarea>
             </div>
-            <input type="submit" value="Agregar Tareas" class="btn btn-primary btn-block" id="editsubmit"/>
+            <button type="submit" class="btn btn-primary btn-block" id="editsubmit">Agregar Tareas</button>
         </form>
         
         
@@ -113,7 +188,8 @@
                     <th>Categoria</th>
                     <th>Descripcion</th>
                     <th>Fecha</th>
-                    <th></th>
+                     <th> </th> 
+                     <th> </th> 
                 </tr>
             </thead>
             <tbody id="book-list"></tbody>
@@ -126,10 +202,6 @@
         
              <div id="chartContainer" style="height: 300px; width: 100%;"></div>
         
-            
-        
-           
-        
         
         </div>
         
@@ -137,50 +209,49 @@
         </div>
         
         </div>
-
+   
+    </div>
 
 
     <!-- Footer -->
     <footer class="bg-dark text-center text-white miFooter">
         <!-- Grid container -->
         <div class="container p-4">
-
-
-            <!-- Section: Form -->
-
-            <!-- Section: Text -->
-            <section class="mb-4">
-                <p>
-                    Realizado por Matías, Guillermo, Ruben, Aurora y Mohammad.
-                </p>
-            </section>
-            <!--ENLACES DE INTERES  -->
-            <div class="columnas">
-                <div class="cajitas">
-
-                    <ul class="enlaces">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
-                <div class="cajitas">
-
-                    <ul class="enlaces">
-                        <li><a href="#">Link</a></li>
-                        <li><a href="#">Link</a></li>
-                    </ul>
-                </div>
+          <!-- Section: Form -->
+         
+          <!-- Section: Text -->
+          <section class="mb-4">
+            <p>
+              Realizado por Matías, Guillermo, Ruben, Aurora y Mohammad.
+            </p>
+          </section>
+          <!--ENLACES DE INTERES  -->
+          <div class="columnas">
+            <div class="cajitas">
+            
+              <ul class="enlaces">
+                <li><a href="registroAsistencia.html">Registro de Asistencias</a></li>
+                <li><a href="ListadeTareas.html">Tareas</a></li>
+              </ul>
             </div>
-            <!-- Grid container -->
-
-            <!-- Copyright -->
-            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2021 Copyright:
-                <a class="text-white"
-                    href="https://mdbootstrap.com/">https://github.com/GuilletDominguez/donbosco-firmasimply-grupo5.git</a>
+            <div class="cajitas">
+            
+              <ul class="enlaces">
+                <li><a href="formulario-pildoras.html">Pildoras</a></li>
+                <li><a href="mailto:">Contacto</a></li>
+              </ul>
             </div>
-            <!-- Copyright -->
-    </footer>
+          </div>
+          <!-- Grid container -->
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2021 Copyright:
+            <a class="text-white"
+              href="https://mdbootstrap.com/">https://github.com/GuilletDominguez/donbosco-firmasimply-grupo5.git</a>
+          </div>
+        </div>
+          <!-- Copyright -->
+      </footer>
     <!-- Footer -->
 </body>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
@@ -192,15 +263,36 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+  integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+  integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+  crossorigin="anonymous"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
+<script src="assets/js/script.js"></script>
+<!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA PRINCIPAL  -->
 
-<!-- <script src="assets/js/main.js"></script>
-<script src="assets/js/login.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
-
-
-	     <script src="assets/js/ListadeTareasJS.js"></script>
-        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/firmasimply/app.js"></script>         
+    <script type="module" src="assets/js/firmasimply/logout.js"></script>
+    <script type="module" src="assets/js/firmasimply/tareas.js"></script>       
+    <script type="module" src="assets/js/ListadeTareasJS.js"></script>
+    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </html>

@@ -1,299 +1,263 @@
 
-let yes;
-window.onload = function () {
+import Auth from './firmasimply/Modules/Auth/Auth.js';
+import Tarea from './firmasimply/Modules/Tarea.js';
+import Categoria from './firmasimply/Modules/Categoria.js';
 
-  var chart = new CanvasJS.Chart("chartContainer", {
-    animationEnabled: true,
-    theme: "light2", // "light1", "light2", "dark1", "dark2"
-    title:{
-      text: "Estadísticas"
-    },
-    axisY: {
-      title: "Semana"
-    },
-    data: [{        
-      type: "column",  
-      showInLegend: true, 
-      legendMarkerColor: "grey",
-      legendText: "tarea",
-      dataPoints: [      
-         { y: 1, y:20, label: "completad'"  },
-         { y: 70, y:40, label: "pendiente" }
-       
-      
-  ]
+// const tareasArray = listadoTareas  || [];
+let infoCoder = Auth.getCoder()
+let emailUser = document.getElementById('usuario');
+ emailUser.innerHTML = infoCoder.name;
 
-  }]
-});
-  chart.render();
-  
-  }
-       
-           
-      
-    // Book Class: Represents a Book
-class Book {
-    constructor(nombre, categoria, descripcion,   fecha) {
-      this.nombre = nombre;
-      this.categoria  = categoria ;
-      this.descripcion = descripcion;
-	    this.fecha = fecha;
-    }
-  }
-  
-  
-  // UI Class: Handle UI Tasks
-  class UI {
-    static displayBooks() {
-      const books = Store.getBooks();
-  
-      books.forEach((book) => UI.addBookToList(book));
-    }
-  
-    static addBookToList(book) {
-      const list = document.querySelector('#book-list');
-  
-      const row = document.createElement('tr');
-
-      row.innerHTML = `
-        <td>${book.nombre}</td>
-        <td>${book.categoria}</td>  
-        <td>${book.descripcion}</td>
-        <td>${book.fecha}</td>
-        <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
-        <td> <a href="#" class="btn btn-success btn-sm success ">&#10004;</a> </td>
-      `;
- //<td> <button id="add" class="success "> &#10004; </button> </td>
-      list.appendChild(row);
-      
-    }
-
-  
-    static doneBook(al) {
-     if(al.classList.contains('success')) {
-          // row.style.background="green";
-          let y= al.parentElement.parentElement;
-          y.style.background="#76e055";
-         
-      
-          //  var number = 1;
-          //  number++;
-          //  console.log(number);
-          
-
-
-          // var number = 0;
-
-          // for (var i = 0; i < 5; i++) {
-          //     number++;
-          //     console.log(number);
-          // }
-     
-        }
-
-    }
-      
-   
-
-      
-    
-
-    static deleteBook(el) {
-
-       if(el.classList.contains('delete')) {
-        //   let x = confirm("¿Estás seguro/a de que quieres eliminarlo?");
-        //   if (confirm == true) { 
-        //   x =  el.parentElement.parentElement.remove();
-        // }
-        // if ( confirm == false) {
-        //   returndefault ;
-        // }
-      
-        el.parentElement.parentElement.remove();
-       }
-
-      
-
-
-      }
-
-
-     static showAlert(message, className) {
-       const div = document.createElement('div');
-       div.className = `alert alert-${className}`;
-       div.appendChild(document.createTextNode(message));
-      
-      
-       const container = document.querySelector('.container');
-       const form = document.querySelector('#flexbox');
-       container.insertBefore(div, form); 
-
-      // Vanish in 3 seconds
-       setTimeout(() => document.querySelector('.alert').remove(), 3000);
-     }
-	
-    static clearFields() {
-      document.querySelector('#nombre').value = '';
-      document.querySelector('#categoria').value = '';
-      document.querySelector('#descripcion').value = '';
-    }
-
-
-    static count(){
-      let z=1;
-       yes= z++;
-      console.log(yes)
-    }
-
-
-      
-  }
-  
-  // Store Class: Handles Storage
-
-  class Store {
-    static getBooks() {
-      let books;
-      if(localStorage.getItem('books') === null) {
-        books = [];
-      } else {
-        books = JSON.parse(localStorage.getItem('books'));
-
-        
-      }
-  
-      return books;
-    }
-  
-    static addBook(book) {
-      const books = Store.getBooks();
-      books.push(book);
-
-      
-      localStorage.setItem('books', JSON.stringify(books));
-      
-    } 
-
-  
-    //  static savecolor(fecha) {
-    //    const books = Store.getBooks();
-  
-    //   books.forEach((book, index) => {
-    //      if(book.fecha === fecha) {
-    //        books.splice(index, 1);
-    //    }
-    //    });
-  
-    //    localStorage.setItem('books', JSON.stringify(books));
-     
-    //  }
-
-  
-    static removeBook(fecha) {
-      const books = Store.getBooks();
-  
-      books.forEach((book, index) => {
-        if(book.fecha === fecha) {
-          books.splice(index, 1);
-        }
-      });
-  
-      localStorage.setItem('books', JSON.stringify(books));
-     
-    }
-
-    
-  }
-  
-
-  // Event: Display Books
-  document.addEventListener('DOMContentLoaded', UI.displayBooks);
-  
+async function getListadoTareas(){
+  //
+  //Tarea.getListadoTareas();
+}
 
   
   // Event: Add a Book
-  document.querySelector('#book-form').addEventListener('submit', (e) => {
+  document.querySelector('#editsubmit').addEventListener('click', crearTarea, false )
 
-    
-  
-    // Prevent actual submit
+  async function crearTarea(e) {
     e.preventDefault();
+    // Prevent actual submit
+    
+    
 
-    
-    
-	
-    // Get form values
-    const nombre = document.querySelector('#nombre').value;
-    const categoria = document.querySelector('#categoria ').value;
-    const descripcion = document.querySelector('#descripcion').value;
-    const fecha = new Date();
+    let nombre = document.querySelector('#nombre').value;
+    let categoria = document.querySelector('#categoria ').value;
+    let descripcion = document.querySelector('#descripcion').value;
+    let fecha = new Date();
+
+    let tarea = {
+      nombre: nombre,
+      descripcion: descripcion,                //'Lorem Ipsum',
+      fecha:fecha,
+      estado: 0,                              // 0 pendiente, 1 completada
+      user_id: Auth.getCoder().id,           // esta funcion devuelve el id del coder logeado
+      categoria_id: 1,
+  };
+
+  //Tarea.crearTarea(tarea);
   
     // Validate
     if(nombre  === '' || categoria === '' || descripcion === '' || fecha === ''  ) {
-      UI.showAlert('Please fill in all fields', 'danger');
+      showAlert('Por favor rellena todos los campos', 'danger');
     } else {
       // Instatiate book
-      const book = new Book(nombre , categoria , descripcion , fecha );
+      // const book = new Book(nombre , categoria , descripcion , fecha );
 
-   
+      // await Tarea.crearTarea(tarea);
+      Tarea.crearTarea(tarea);
       // Add Book to UI
-      UI.addBookToList(book) 
+      addtareaToList(tarea)  
 
    
        // count
-      UI.count();
+       count();
         
     
       // Add book to store
-      Store.addBook(book);
+     // Store.addBook(book);
   
-
-
 
       // Show success message
       // UI.showAlert('Tarea añadido', 'success');
   
       // Clear fields
-      UI.clearFields();
+      clearFields()
+
+      
     }
-  });
+  };
+
+ function addtareaToList(tarea) {
+    const list = document.querySelector('#book-list');
+
+    const row = document.createElement('tr');
+
+    row.innerHTML = `
+      <td>${tarea.nombre}</td>
+      <td>${tarea.categoria}</td>  
+      <td>${tarea.descripcion}</td>
+      <td>${tarea.fecha}</td>
+      <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
+      <td> <button id="add" class="success "> &#10004; </button> </td>
+    `;
+    //<td> <a href="#" class="btn btn-success btn-sm success success2 ">&#10004;</a> </td>
+    //<td> <button onclick="guardarLocalStorage(${tarea.id})" class="btn btn-success btn-sm success">&#10004;</button> </td>
+    //<td> <button id="add" class="success "> &#10004; </button> </td>
+    list.appendChild(row);
+    
+  }
+
+
+  function doneBook(al) {
+
+      
+    if(al.classList.contains('success') && al.parentElement.parentElement.style.background == "rgb(118, 224, 85)") 
+    {
+       
+       al.parentElement.parentElement.style.background="none";
+
+     
+    } 
+    else {
+    al.parentElement.parentElement.style.background="rgb(118, 224, 85)";
+      
+    
+     }
+
+  }
+
+
+  function deleteBook(el) {
+
+    if(el.classList.contains('delete')) {
+
+     //   let x = confirm("¿Estás seguro/a de que quieres eliminarlo?");
+     //   if (confirm == true) { 
+     //   x =  el.parentElement.parentElement.remove();
+     // }
+     // if ( confirm == false) {
+     //   returndefault ;
+     // }
+   
+     el.parentElement.parentElement.remove();
+    }
+
+ 
+   }
+
+   function showAlert(message, className) {
+    const div = document.createElement('div');
+    div.className = `alert alert-${className}`;
+    div.appendChild(document.createTextNode(message));
+   
+   
+    const container = document.querySelector('.container');
+    const form = document.querySelector('#flexbox');
+    container.insertBefore(div, form); 
+
+   // Vanish in 3 seconds
+    setTimeout(() => document.querySelector('.alert').remove(), 3000);
+  }
+
+
+  function clearFields() {
+    document.querySelector('#nombre').value = '';
+    document.querySelector('#categoria').value = '';
+    document.querySelector('#descripcion').value = '';
+  }
+
+
+   function count(){
+
+      let z=1;
+      let yes= z++;
+      console.log(yes);
+   
+    
+  }
+       
+ 
+    // Book Class: Represents a Book
+// class Book {
+//     constructor(nombre, categoria, descripcion,   fecha) {
+//       this.nombre = nombre;
+//       this.categoria  = categoria ;
+//       this.descripcion = descripcion;
+// 	    this.fecha = fecha;
+//     }
+//   }
   
+  
+
+
+  // Store Class: Handles Storage
+
+  // class Store {
+  //   static getBooks() {
+  //     let books;
+  //     if(localStorage.getItem('books') === null) {
+  //       books = [];
+  //     } else {
+  //       books = JSON.parse(localStorage.getItem('books'));
+        
+      
+  //     }
+  
+  //     return books;
+  //   }
+  
+  //   static addBook(book) {
+  //     const books = Store.getBooks();
+  //     books.push(book);
+      
+      
+  //     localStorage.setItem('books', JSON.stringify(books));
+     
+      
+  //   } 
+
+
+  
+  //   static removeBook(fecha) {
+  //     const books = Store.getBooks();
+  
+  //     books.forEach((book, index) => {
+  //       if(book.fecha === fecha) {
+  //         books.splice(index, 1);
+  //       }
+  //     });
+  
+  //     localStorage.setItem('books', JSON.stringify(books));
+     
+  //   }
+
+    
+  // }
+  
+  // Event: Display Books
+  // document.addEventListener('DOMContentLoaded', UI.displayBooks);
+  
+ 
+  
+
   // Event: Remove a Book
   document.querySelector('#book-list').addEventListener('click', (e) => {
     
     
     // check mark Done from UI
-    
-     UI.doneBook(e.target);
+     doneBook(e.target);
      
      
    
      //console.log(e.target);
 
-    // Store.savecolor(e.target.parentElement.parentElement.previousElementSibling);
      
     
     // Remove book from UI
-    UI.deleteBook(e.target);
+    deleteBook(e.target);
 
     
     
-
+   // Show success message
+  // UI.showAlert('Tarea eliminada', 'info');
     
-    // Remove book from store
-      Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
-
+  
+    });
      
   
-    // Show success message
-    // UI.showAlert('Tarea eliminada', 'info');
-  });
-
-  // var list = document.querySelector('#book-list');
-  // list.addEventListener('click', function(ev) {
-  //   if (ev.target.tagName === 'TD') {
-  //     ev.target.classList.toggle('checked');
-  //   }
-  // }, false);
 
 
+    // Borrar una tarea
+      let idTarea = 2;
+      Tarea.borrarTarea(idTarea);
+
+      // Marcar una tarea como completada o pendiente  // 1 completada, 0 pendiente
+        //  idTarea = 2;
+        // let data = { estado: 1 };               
+        // Tarea.marcarTarea(data, idTarea);
+          
+
+        Categoria.getListadoCategorias();
