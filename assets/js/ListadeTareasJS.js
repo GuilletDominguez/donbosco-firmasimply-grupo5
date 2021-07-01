@@ -77,7 +77,7 @@ async function getListadoTareas(){
       // Instatiate book
       // const book = new Book(nombre , categoria , descripcion , fecha );
 
-      // await Tarea.crearTarea(tarea);
+       //await Tarea.crearTarea(tarea);
       Tarea.crearTarea(tarea);
       // Add Book to UI
       addtareaToList(tarea)  
