@@ -145,7 +145,7 @@ function marcarPildora(){
 
 function deletePildora() {
     document.querySelector('#pildora-list').addEventListener('click', (e) => {
-       
+       e.preventDefault()
         removePildora(e.target.parentElement.previousElementSibling.previousElementSibling.textContent);
         if (e.target.classList.contains('delete')) {
             e.target.parentElement.parentElement.remove();
