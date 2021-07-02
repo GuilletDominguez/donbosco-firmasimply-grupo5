@@ -6,8 +6,9 @@ import Pildora from './Modules/Pildora.js';
 //Informacion Dinámica del usuario logueado
 let infoCoder = Auth.getCoder()
 let emailUser = document.getElementById('usuario');
+if(emailUser != null){
 emailUser.innerHTML = infoCoder.name;
-
+}
 // ------------------------------------------------------------------------------------------------------Funcionalidad de Firmar
 async function getListadoFirmas() {
     let respuesta = await Asistencia.getlistadoFirmas();
