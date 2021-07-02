@@ -1,7 +1,7 @@
 const hostName = 'http://143.198.170.155';
 // Login / Logout
-async function login(data = {}) {
-  return await apiCall('POST', hostName + '/api/login', null, data);
+async function login(data = {},status) {
+  return await apiCall('POST', hostName + '/api/login', null, data, status);
 };
 
 async function logout(token) {
