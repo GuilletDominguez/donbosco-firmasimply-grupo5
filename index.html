@@ -26,7 +26,8 @@
 
 <body>
 
-  <header id="header" class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
+  <header id="header"
+    class="container-fluid d-flex justify-content-center align-items-end animate__animated animate__slideInDown">
 
     <h1 class="tituloHeader">FIRMASIMPLY</h1>
     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -83,11 +84,13 @@
 
       <ul class="list-unstyled components">
         <div id="perfil">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlM1E58FgxP7oLCX6FyrzMdmH5eICwCNpofw&usqp=CAU" alt="">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlM1E58FgxP7oLCX6FyrzMdmH5eICwCNpofw&usqp=CAU"
+            alt="">
           <p id="usuario"></p>
         </div>
         <li>
-          <a href="registroAsistencia.html" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
+          <a href="registroAsistencia.html" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i>
+            Asistencia </a>
 
         </li>
         <li>
@@ -102,14 +105,14 @@
         </li>
       </ul>
       <div class="frase">
-        
+
         <blockquote id="cita">
         </blockquote>
-        
+
         <div class="autor-frase">
-         <span id="autor">
+          <span id="autor">
         </div>
-      <p id="get-cita"> Cambiar frase <i class="fas fa-exchange-alt"></i> </p>
+        <p id="get-cita"> Cambiar frase <i class="fas fa-exchange-alt"></i> </p>
       </div>
     </nav>
 
@@ -124,7 +127,8 @@
           </button>
         </div>
       </nav>
-      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
@@ -137,8 +141,10 @@
               ¿Estás seguro de que quieres cerrar sesión?
             </div>
             <div class="modal-footer">
-              <button id="confirmar" type="submit" class="btn btn-secondary" data-dismiss="modal">Sí, quiero salir.</button>
-              <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero volver.</button>
+              <button id="confirmar" type="submit" class="btn btn-secondary" data-dismiss="modal">Sí, quiero
+                salir.</button>
+              <button id="cancelar" type="button" class="btn btn-primary" data-dismiss="modal">No, quiero
+                volver.</button>
             </div>
           </div>
         </div>
@@ -155,7 +161,7 @@
           <h5 class="card-title text"><strong>Confirme su asistencia de hoy</strong></h5>
           <p class="card-text text">Pulse el botón de "Entrada" para validar la entrada a clase de hoy o "Salida" para
             validar la salida de clase.</p>
-            <div id="notaMsg"></div>
+          <div id="notaMsg"></div>
           <div class="form-group">
             <label class="text" for="notaAdjunta">Nota para adjuntar</label>
             <textarea style="resize: none;" class="form-control" id="notaAdjunta" rows="3"></textarea>
@@ -169,11 +175,11 @@
 
           <div class="alineadoBotones w-100 d-flex justify-content-around align-items-center">
             <button type="button" data-toggle="tooltip" data-placement="bottom"
-              title="Recuerda que puedes añadir una nota antes de enviar tu entrada de clase"
-              class="btn btn-primary" id="entrada">Entrada</button>
+              title="Recuerda que puedes añadir una nota antes de enviar tu entrada de clase" class="btn btn-primary"
+              id="entrada">Entrada</button>
             <button type="button" data-toggle="tooltip" data-placement="bottom"
-              title="Recuerda que puedes añadir una nota antes de enviar tu salida de clase"
-              class="btn btn-primary" id="salida" >Salida</button>
+              title="Recuerda que puedes añadir una nota antes de enviar tu salida de clase" class="btn btn-primary"
+              id="salida">Salida</button>
           </div>
         </div>
       </div>
@@ -182,161 +188,181 @@
         <!-- --------------------------------------------------------------------------ASISTENCIAS---------------------------------------------------------- -->
         <h1 style="text-align: center;">Asistencias</h1>
         <div class="asistenciaGrid1">
-          <div class="card text-white bg-info mb-3" >
+          <div class="card text-white bg-info mb-3">
             <div class="card-body letra">
-              <h5 class="card-title">Día: 19/06/2021</h5>
+              <h5 id="firstCard" class="card-title"></h5>
               <div class="d-flex">
-                <p class="card-text mr-3">Entrada: 8:31H</p>
-                <p class="card-text">Salida: 15:30H</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="card text-white bg-info mb-3" >
-            <div class="card-body letra">
-              <h5 class="card-title">Día: 19/06/2021</h5>
-              <div class="d-flex">
-                <p class="card-text mr-3">Entrada: 8:31H</p>
-                <p class="card-text">Salida: 15:30H</p>
+                <p id="entranceFirstCard0" class="card-text mr-3"></p>
+                <p id="exitFirstCard0" class="card-text"></p>
               </div>
             </div>
           </div>
 
           <div class="card text-white bg-info mb-3">
             <div class="card-body letra">
-              <h5 class="card-title">Día: 19/06/2021</h5>
+              <h5 id="secondCard" class="card-title"></h5>
               <div class="d-flex">
-                <p class="card-text mr-3">Entrada: 8:31H</p>
-                <p class="card-text">Salida: 15:30H</p>
+                <p id="entranceFirstCard1" class="card-text mr-3"></p>
+                <p id="exitFirstCard1" class="card-text"></p>
               </div>
             </div>
           </div>
 
           <div class="card text-white bg-info mb-3">
             <div class="card-body letra">
-              <h5 class="card-title">Día: 19/06/2021</h5>
+              <h5 id="thirdCard" class="card-title"></h5>
               <div class="d-flex">
-                <p class="card-text mr-3">Entrada: 8:31H</p>
-                <p class="card-text">Salida: 15:30H</p>
+                <p id="entranceFirstCard2" class="card-text mr-3"></p>
+                <p id="exitFirstCard2" class="card-text"></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card text-white bg-info mb-3">
+            <div class="card-body letra">
+              <h5 id="fourthCard" class="card-title"></h5>
+              <div class="d-flex">
+                <p id="entranceFirstCard3" class="card-text mr-3"></p>
+                <p id="exitFirstCard3" class="card-text"></p>
               </div>
             </div>
           </div>
         </div>
-        <!-- --------------------------------------------------------------------------TAREAS---------------------------------------------------------- -->
+        <!-- --------------------------------------------------------------------------PÍLDORAS---------------------------------------------------------- -->
         <h1 class="mt-3" style="text-align: center;">Píldoras</h1>
         <div class="pildorasGrid2">
-          <div class="card text-white bg-info mb-3" >
-            <div class="card-body textNew">
-              <h5 class="card-title">Typescript</h5>
-              <p class="card-text">Alumno: Guillermo Disousa</p>
-              <p class="card-text">Aprende conceptos básicos de Typescript</p>
-            </div>
-          </div>
-
-          <div class="card text-white bg-info mb-3" >
-            <div class="card-body textNew">
-              <h5 class="card-title">Typescript</h5>
-              <p class="card-text">Alumno: Guillermo Disousa</p>
-              <p class="card-text">Aprende conceptos básicos de Typescript</p>
-            </div>
-          </div>
-
           <div class="card text-white bg-info mb-3">
             <div class="card-body textNew">
-              <h5 class="card-title">Typescript</h5>
-              <p class="card-text">Alumno: Guillermo Disousa</p>
-              <p class="card-text">Aprende conceptos básicos de Typescript</p>
+              <h5 id="pildorafirstCard" class="card-title"></h5>
+              <p id="pildoraestado1" class="card-text"></p>
+              <p id="pildorafecha1" class="card-text"></p>
+              <p id="pildoradescripcion1" class="card-text">
+                < </div>
+            </div>
+
+            <div class="card text-white bg-info mb-3">
+              <div class="card-body textNew">
+                <h5 id="pildorasecondCard" class="card-title"></h5>
+                <p id="pildoraestado2" class="card-text"></p>
+                <p id="pildorafecha2" class="card-text"></p>
+                <p id="pildoradescripcion2" class="card-text">
+                  < </div>
+              </div>
+
+              <div class="card text-white bg-info mb-3">
+                <div class="card-body textNew">
+                  <h5 id="pildorathirdCard" class="card-title"></h5>
+                  <p id="pildoraestado3" class="card-text"></p>
+                  <p id="pildorafecha3" class="card-text"></p>
+                  <p id="pildoradescripcion3" class="card-text">
+                    < </div>
+                </div>
+
+                <div class="card text-white bg-info mb-3">
+                  <div class="card-body textNew">
+                    <h5 id="pildorafourthCard" class="card-title"></h5>
+                    <p id="pildoraestado4" class="card-text"> </p>
+                    <p id="pildorafecha4" class="card-text"> </p>
+                    <p id="pildoradescripcion4" class="card-text">
+                      < </div>
+                  </div>
+                </div>
+
+                <!-- --------------------------------------------------------------------------TAREAS---------------------------------------------------------- -->
+                <h1 class="mt-3" style="text-align: center;">Tareas</h1>
+                <div class="tareasGrid3">
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+
+                  <div class="card text-white bg-info mb-3">
+                    <div class="card-body textNew">
+                      <h5 class="card-title">Práctica BookList</h5>
+                      <p class="card-text">Fecha limite entrega</p>
+                      <p class="card-text">21/07/2021</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="card text-white bg-info mb-3">
-            <div class="card-body textNew">
-              <h5 class="card-title">Typescript</h5>
-              <p class="card-text">Alumno: Guillermo Disousa</p>
-              <p class="card-text">Aprende conceptos básicos de Typescript</p>
-            </div>
-          </div>
-        </div>
+          <!-- Footer -->
+          <footer class="bg-dark text-center text-white miFooter">
+            <!-- Grid container -->
+            <div class="container p-4">
+              <!-- Section: Form -->
 
-        <!-- --------------------------------------------------------------------------TAREAS---------------------------------------------------------- -->
-        <h1 class="mt-3" style="text-align: center;">Tareas</h1>
-        <div class="tareasGrid3">
-          <div class="card text-white bg-info mb-3">
-            <div class="card-body textNew">
-              <h5 class="card-title">Práctica BookList</h5>
-              <p class="card-text">Fecha limite entrega</p>
-              <p class="card-text">21/07/2021</p>
-            </div>
-          </div>
+              <!-- Section: Text -->
+              <section class="mb-4">
+                <p>
+                  Realizado por Matías, Guillermo, Ruben, Aurora y Mohammad.
+                </p>
+              </section>
+              <!--ENLACES DE INTERES  -->
+              <div class="columnas">
+                <div class="cajitas">
 
-          <div class="card text-white bg-info mb-3">
-            <div class="card-body textNew">
-              <h5 class="card-title">Práctica BookList</h5>
-              <p class="card-text">Fecha limite entrega</p>
-              <p class="card-text">21/07/2021</p>
-            </div>
-          </div>
+                  <ul class="enlaces">
+                    <li><a href="index.html">Registro de Asistencias</a></li>
+                    <li><a href="ListadeTareas.html">Tareas</a></li>
+                  </ul>
+                </div>
+                <div class="cajitas">
 
-          <div class="card text-white bg-info mb-3" >
-            <div class="card-body textNew">
-              <h5 class="card-title">Práctica BookList</h5>
-              <p class="card-text">Fecha limite entrega</p>
-              <p class="card-text">21/07/2021</p>
+                  <ul class="enlaces">
+                    <li><a href="formulario-pildoras.html">Pildoras</a></li>
+                    <li><a href="mailto:">Contacto</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Grid container -->
+              <!-- Copyright -->
+              <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                © 2021 Copyright:
+                <a class="text-white"
+                  href="https://mdbootstrap.com/">https://github.com/GuilletDominguez/donbosco-firmasimply-grupo5.git</a>
+              </div>
             </div>
-          </div>
-
-          <div class="card text-white bg-info mb-3" >
-            <div class="card-body textNew">
-              <h5 class="card-title">Práctica BookList</h5>
-              <p class="card-text">Fecha limite entrega</p>
-              <p class="card-text">21/07/2021</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-center text-white miFooter">
-    <!-- Grid container -->
-    <div class="container p-4">
-      <!-- Section: Form -->
-     
-      <!-- Section: Text -->
-      <section class="mb-4">
-        <p>
-          Realizado por Matías, Guillermo, Ruben, Aurora y Mohammad.
-        </p>
-      </section>
-      <!--ENLACES DE INTERES  -->
-      <div class="columnas">
-        <div class="cajitas">
-        
-          <ul class="enlaces">
-            <li><a href="registroAsistencia.html">Registro de Asistencias</a></li>
-            <li><a href="ListadeTareas.html">Tareas</a></li>
-          </ul>
-        </div>
-        <div class="cajitas">
-        
-          <ul class="enlaces">
-            <li><a href="formulario-pildoras.html">Pildoras</a></li>
-            <li><a href="mailto:">Contacto</a></li>
-          </ul>
-        </div>
-      </div>
-      <!-- Grid container -->
-      <!-- Copyright -->
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-        © 2021 Copyright:
-        <a class="text-white"
-          href="https://mdbootstrap.com/">https://github.com/GuilletDominguez/donbosco-firmasimply-grupo5.git</a>
-      </div>
-    </div>
-      <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
+            <!-- Copyright -->
+          </footer>
+          <!-- Footer -->
 
 
 
@@ -350,8 +376,7 @@
 <script type="module" src="assets/js/firmasimply/index.js"></script>
 
 <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
-integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
-crossorigin="anonymous"></script>
+  integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
   integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -366,10 +391,9 @@ crossorigin="anonymous"></script>
   integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 <script
   src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
-  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
-  crossorigin="anonymous"></script>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+  integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
 <script src="assets/js/script.js"></script>
 
