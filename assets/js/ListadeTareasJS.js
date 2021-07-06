@@ -8,11 +8,30 @@ let infoCoder = Auth.getCoder()
 let emailUser = document.getElementById('usuario');
  emailUser.innerHTML = infoCoder.name;
 
-async function getListadoTareas(){
-  //
-  //Tarea.getListadoTareas();
-}
+ mostrarSeisPildoras();
 
+ async function mostrarSeisPildoras(){
+     let listado = await Tarea.getListadoTareas();     
+     const list = document.getElementById('book-list'); 
+     // let ultimas = listado.slice(listado.length-6);
+     let ultimas = listado.reverse();
+     for (let x = 0; x < ultimas.length; x++){    
+         if (x < 6){   
+              
+             const row = document.createElement('tr');
+             row.innerHTML = `
+                 <td>${listado[x].titulo}</td>
+                 
+                  <td>${listado[x].descripcion}</td>
+                 <td>${truncateString(listado[x].created_at,10)}</td>
+                 <td style="display : none">${listado[x].id}</td>
+                 <td><label><input type="checkbox" id="${listado[x].id}" class="pulsado" value="${listado[x].estado}">Presentada</label></td>
+                 <td><a href="#" id="${listado[x].id}" class="btn btn-danger btn-sm delete">X</td>
+                 ` 
+                 list.appendChild(row); 
+         }   
+     }
+ }
   
   // Event: Add a Book
   document.querySelector('#editsubmit').addEventListener('click', crearTarea, false )
@@ -24,7 +43,7 @@ async function getListadoTareas(){
     
 
     let nombre = document.querySelector('#nombre').value;
-    let categoria = document.querySelector('#categoria ').value;
+   
     let descripcion = document.querySelector('#descripcion').value;
     let fecha = new Date();
 
@@ -35,12 +54,13 @@ async function getListadoTareas(){
       estado: 0,                              // 0 pendiente, 1 completada
       user_id: Auth.getCoder().id,           // esta funcion devuelve el id del coder logeado
       categoria_id: 1,
+     
   };
 
   //Tarea.crearTarea(tarea);
   
     // Validate
-    if(nombre  === '' || categoria === '' || descripcion === '' || fecha === ''  ) {
+    if(nombre  === '' || descripcion === '' || fecha === ''  ) {
       showAlert('Por favor rellena todos los campos', 'danger');
     } else {
       // Instatiate book
@@ -70,23 +90,18 @@ async function getListadoTareas(){
     }
   };
 
- function addtareaToList(tarea) {
-    const list = document.querySelector('#book-list');
-
+ async function addtareaToList(tarea) {
+  const list = document.getElementById('book-list'); 
     const row = document.createElement('tr');
-
     row.innerHTML = `
-      <td>${tarea.titulo}</td>
-      <td>${categoria.value}</td>  
-      <td>${tarea.descripcion}</td>
-      <td>${tarea.fecha}</td>
-      <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
-      <td> <button id="add" class="success "> &#10004; </button> </td>
-    `;
-    //<td> <a href="#" class="btn btn-success btn-sm success success2 ">&#10004;</a> </td>
-    //<td> <button onclick="guardarLocalStorage(${tarea.id})" class="btn btn-success btn-sm success">&#10004;</button> </td>
-    //<td> <button id="add" class="success "> &#10004; </button> </td>
-    list.appendChild(row);
+        <td>${tarea.titulo}</td>
+        <td>${tarea.descripcion}</td>
+        <td>${truncateString(tarea.fecha,10)}</td>
+        <td style="display : none">${tarea.id}</td>
+        <td><label><input type="checkbox" id="${tarea.id}" class="pulsado" value="${tarea.estado}">Presentada</label></td>
+        <td><a href="#" id="${tarea.id}" class="btn btn-danger btn-sm delete">X</td>
+        ` 
+       await list.appendChild(row); 
     
   }
 
@@ -145,7 +160,7 @@ async function getListadoTareas(){
 
   function clearFields() {
     document.querySelector('#nombre').value = '';
-    document.querySelector('#categoria').value = '';
+ 
     document.querySelector('#descripcion').value = '';
   }
 
@@ -261,3 +276,13 @@ async function getListadoTareas(){
           
 
         Categoria.getListadoCategorias();
+        console.log(Categoria.getListadoCategorias);
+     
+function truncateString(str, num) {
+  if (str.length > num) {
+      let subStr = str.substring(0, num);
+      return subStr ;
+  } else {
+      return str;
+  }
+}
