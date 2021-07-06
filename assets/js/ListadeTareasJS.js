@@ -29,7 +29,7 @@ async function getListadoTareas(){
     let fecha = new Date();
 
     let tarea = {
-      nombre: nombre,
+      titulo: nombre,
       descripcion: descripcion,                //'Lorem Ipsum',
       fecha:fecha,
       estado: 0,                              // 0 pendiente, 1 completada
@@ -76,8 +76,8 @@ async function getListadoTareas(){
     const row = document.createElement('tr');
 
     row.innerHTML = `
-      <td>${tarea.nombre}</td>
-      <td>${tarea.categoria}</td>  
+      <td>${tarea.titulo}</td>
+      <td>${categoria.value}</td>  
       <td>${tarea.descripcion}</td>
       <td>${tarea.fecha}</td>
       <td> <a href="#" class="btn btn-danger btn-sm delete">X</a> </td>
