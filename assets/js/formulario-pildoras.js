@@ -7,25 +7,34 @@ import Tarea from './firmasimply/Modules/Tarea.js';
 mostrarSeisPildoras();
 
 async function mostrarSeisPildoras(){
-    let listado = await Pildora.getListadoPildoras();     
+    let listado = await Pildora.getListadoPildoras(); 
     const list = document.getElementById('pildora-list'); 
     // let ultimas = listado.slice(listado.length-6);
     let ultimas = listado.reverse();
     for (let x = 0; x < ultimas.length; x++){    
-        if (x < 6){   
-                    
+        if (x < 6){            
             const row = document.createElement('tr');
+            console.log(listado[x].estado);
+
+            let text1;
+            if (listado[x].estado == 0){
+                console.log(listado[x].estado);
+                text1 = `<td><label><input type="checkbox" id="${listado[x].id}" class="pulsado" value="${listado[x].estado}">Pendiente</label></td>`;
+            }else{
+                text1 = `<td><label><input type="checkbox" id="${listado[x].id}" class="pulsado" value="${listado[x].estado}">Presentada</label></td>`;
+            }
+            
             row.innerHTML = `
                 <td>${listado[x].nombre}</td>
                 <td>${listado[x].descripcion}</td>
                 <td>${listado[x].fecha_presentacion}</td>
                 <td>${truncateString(listado[x].created_at,10)}</td>
                 <td style="display : none">${listado[x].id}</td>
-                <td><label><input type="checkbox" id="${listado[x].id}" class="pulsado" value="${listado[x].estado}">Presentada</label></td>
+                ${text1}
                 <td><a href="#" id="${listado[x].id}" class="btn btn-danger btn-sm delete">X</td>
-                ` 
+                `                
                 list.appendChild(row); 
-        }   
+        }  
     }
     document.querySelector('#pildora-list').addEventListener('click', marcarPildora);
     async function marcarPildora(e) {
