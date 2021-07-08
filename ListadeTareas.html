@@ -85,11 +85,11 @@
             <p id="usuario"></p>
           </div>
           <li>
-            <a href="registroAsistencia.html" data-toggle="collapse" aria-expanded="false"><i class="fas fa-users"></i> Asistencia </a>
+            <a href="index.html"> <i class="fas fa-users"></i> Asistencia </a>
   
           </li>
           <li>
-            <a href="formulario-pildoras.html"><i class="fas fa-capsules"></i> Pildora</a>
+            <a href="Pildoras.html"><i class="fas fa-capsules"></i> Pildora</a>
           </li>
           <li>
             <a href="ListadeTareas.html"><i class="fas fa-list-ol"></i> Tareas</a>
@@ -147,7 +147,7 @@
       <div class="container mt-4" style="z-index: 1;">
 
         <h1 class="display-4 text-center">
-            <i class="fas fa-pencil text-primary"></i>  Lista  <span class="text-primary"
+          <span  style="color: #369FFF">&#9998; </span>  Lista  <span class="text-primary"
            >de </span
             >Tareas
         </h1>
@@ -174,9 +174,9 @@
             <thead>
                 <tr>
                     <th>Nombre</th>
-
                     <th>Descripcion</th>
                     <th>Fecha</th>
+                    <th> ID </th> 
                      <th> </th> 
                      <th> </th> 
                 </tr>
@@ -186,13 +186,13 @@
         
         </div>
         
-        <div id="Estadísticas">
+         <!-- <div id="Estadísticas">
             
         
-             <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+          <canvas id="barChart" width="400px" height="400px"> </canvas>
         
         
-        </div>
+        </div>  -->
         
         
         </div>
@@ -219,7 +219,7 @@
             <div class="cajitas">
             
               <ul class="enlaces">
-                <li><a href="registroAsistencia.html">Registro de Asistencias</a></li>
+                <li><a href="index.html">Registro de Asistencias</a></li>
                 <li><a href="ListadeTareas.html">Tareas</a></li>
               </ul>
             </div>
@@ -274,13 +274,15 @@ crossorigin="anonymous"></script>
   crossorigin="anonymous"></script>
   <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
 
+
 <script src="assets/js/script.js"></script>
+
 <!-- IMPORTAR LOS SIGUIENTE JS EN TU PÁGINA PRINCIPAL  -->
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script type="module" src="assets/js/firmasimply/app.js"></script>         
     <script type="module" src="assets/js/firmasimply/logout.js"></script>
-    <script type="module" src="assets/js/ListadeTareasJS.js"></script>
+    <script type="module" src="assets/js/firmasimply/tareas.js"></script>
     <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
 </html>
