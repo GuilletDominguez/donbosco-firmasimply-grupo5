@@ -5,6 +5,12 @@
     width:50%;
 }
 
+.checkbox, .control-label, .form-control-feedback, .help-block, .radio, label {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    margin-left: 0;
+}
+
 #Categoria {
     width:50%; 
 }
