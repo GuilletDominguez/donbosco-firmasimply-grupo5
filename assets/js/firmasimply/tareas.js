@@ -4,42 +4,6 @@ import Tarea from './/Modules/Tarea.js';
 import Categoria from './Modules/Categoria.js';
 
 
-    
-// window.onload = function () {
-
-//   var ctx = document.getElementById("barChart");
-//   var barChart = new Chart(ctx, {
-//       type: 'bar',
-//       data: {
-//           labels: ["Dog", "Cat", "Pangolin"],
-//           datasets: [{
-//               backgroundColor: '#00ff00',
-//               label: '# of Votes 2016',
-//               data: [12, 19, 3]
-//               }]
-//       }
-//   });
-  
-//   function addData(chart, label, color, data) {
-//       chart.data.datasets.push({
-//         label: label,
-//         backgroundColor: color,
-//         data: data
-//       });
-//       chart.update();
-//   }
-  
-//   // inserting the new dataset after 3 seconds
-//   setTimeout(function() {
-//     addData(barChart, '# of Votes 2017', '#ff0000', [16, 14, 8]);
-//   }, 3000);
-  
-//    }
-
-
-
-
-
 let infoCoder = Auth.getCoder()
 let emailUser = document.getElementById('usuario');
  emailUser.innerHTML = infoCoder.name;
@@ -97,6 +61,7 @@ let emailUser = document.getElementById('usuario');
       categoria_id: 1,
      
      };
+
 
     // Validate
     if(nombre  === '' || descripcion === '' || fecha === ''  ) {
@@ -184,7 +149,7 @@ let emailUser = document.getElementById('usuario');
           console.log(data);
       }
       
-      //window.location.reload(); 
+
      
     }
  
@@ -201,23 +166,7 @@ async function deletTarea(e){
   }
 }
 
-
-
-  // Event: Check
-  // document.querySelector('#book-list').addEventListener('click', (e) => {
-   
-  //   // check  target marks 
-  
-  //    console.log(e.target);
- 
-  //   });
-     
-  
-
-        
-  Categoria.getListadoCategorias();
-  console.log(Categoria.getListadoCategorias);
-     
+  console.log(await Tarea.getListadoTareas());
 function truncateString(str, num) {
   if (str.length > num) {
       let subStr = str.substring(0, num);

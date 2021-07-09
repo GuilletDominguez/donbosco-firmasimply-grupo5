@@ -67,6 +67,8 @@ input[type=checkbox], input[type=radio] {
     margin-right: 5px;
     padding: 0;
 }
-
+#sidebar ul.components {
+    padding: 27px 0!important;
+}
 
 

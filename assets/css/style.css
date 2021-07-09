@@ -136,11 +136,18 @@ border:none!important;
     margin-bottom: .3vh!important;
 }
 
+    #usuario {
+        font-size: 1.2em!important;
+    }
+    
 @media screen and (max-width : 800px) {
     .d-flex{
     flex-direction: column; 
     }
-    
+
+        #usuario {
+            font-size: calc(0.9em + 0.5vw)!important;
+        }
     .alineadoBotones{
         flex-direction: revert;
     }

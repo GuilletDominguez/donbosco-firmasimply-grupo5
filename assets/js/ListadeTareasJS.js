@@ -175,67 +175,6 @@ let emailUser = document.getElementById('usuario');
   }
        
  
-    // Book Class: Represents a Book
-// class Book {
-//     constructor(nombre, categoria, descripcion,   fecha) {
-//       this.nombre = nombre;
-//       this.categoria  = categoria ;
-//       this.descripcion = descripcion;
-// 	    this.fecha = fecha;
-//     }
-//   }
-  
-  
-
-
-  // Store Class: Handles Storage
-
-  // class Store {
-  //   static getBooks() {
-  //     let books;
-  //     if(localStorage.getItem('books') === null) {
-  //       books = [];
-  //     } else {
-  //       books = JSON.parse(localStorage.getItem('books'));
-        
-      
-  //     }
-  
-  //     return books;
-  //   }
-  
-  //   static addBook(book) {
-  //     const books = Store.getBooks();
-  //     books.push(book);
-      
-      
-  //     localStorage.setItem('books', JSON.stringify(books));
-     
-      
-  //   } 
-
-
-  
-  //   static removeBook(fecha) {
-  //     const books = Store.getBooks();
-  
-  //     books.forEach((book, index) => {
-  //       if(book.fecha === fecha) {
-  //         books.splice(index, 1);
-  //       }
-  //     });
-  
-  //     localStorage.setItem('books', JSON.stringify(books));
-     
-  //   }
-
-    
-  // }
-  
-  // Event: Display Books
-  // document.addEventListener('DOMContentLoaded', UI.displayBooks);
-  
- 
   
 
   // Event: Remove a Book
@@ -255,25 +194,17 @@ let emailUser = document.getElementById('usuario');
     deleteBook(e.target);
 
     
-    
-   // Show success message
-  // UI.showAlert('Tarea eliminada', 'info');
-    
+
   
     });
      
   
 
-
+    console.log(await Categoria.getListadoCategorias());
     // Borrar una tarea
       let idTarea = 2;
       Tarea.borrarTarea(idTarea);
 
-      // Marcar una tarea como completada o pendiente  // 1 completada, 0 pendiente
-        //  idTarea = 2;
-        // let data = { estado: 1 };               
-        // Tarea.marcarTarea(data, idTarea);
-          
 
         Categoria.getListadoCategorias();
         console.log(Categoria.getListadoCategorias);
