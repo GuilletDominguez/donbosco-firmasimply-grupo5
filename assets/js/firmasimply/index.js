@@ -421,14 +421,120 @@ getListadoPildoras();
 
 ////////////////////////////////////////////////////////////////////////Listado de Tareas////////////////////////////////////////////////////////////////////////////////
 
-async function getListadoTareas(){
-  // Consultar el listado de píldoras
-let tareasListado = await Tarea.getListadoTareas();
-  
-let mostrarUltimasTareas = tareasListado;
-let cuatroUltimasTareas = mostrarUltimasTareas.slice(mostrarUltimasTareas.length - 4)
 
-console.log(cuatroUltimasTareas)
+async function getListadoTareas(){
+
+  // Consultar el listado de píldoras
+  let tareasListado = await Tarea.getListadoTareas();
+  let cuatroUltimasTareas = tareasListado.slice(tareasListado.length - 6);
+  let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  console.log(cuatroUltimasTareas)
+
+
+
+let nombreTarea1 = cuatroUltimasTareas[0].titulo
+let estadoTarea1 = cuatroUltimasTareas[0].estado
+let fechaTarea1 = new Date(cuatroUltimasTareas[0].updated_at)
+let descripcionTarea1 = cuatroUltimasTareas[0].descripcion
+let titleTarea1 = document.getElementById("TareafirstCard");
+let Tareaestado1 = document.getElementById("Tareaestado1");
+let Tareafecha1 = document.getElementById("Tareafecha1");
+let Tareadescripcion1 = document.getElementById("Tareadescripcion1");
+titleTarea1.innerHTML =  nombreTarea1
+if(estadoTarea1 == 0){
+  Tareaestado1.innerHTML =  "Pendiente"
+}else{
+  Tareaestado1.innerHTML =  "Presentada"
+}
+Tareafecha1.innerHTML =  fechaTarea1.toLocaleDateString('es-ES',options);
+Tareadescripcion1.innerHTML =  descripcionTarea1
+
+let nombreTarea2 = cuatroUltimasTareas[1].titulo
+let estadoTarea2 = cuatroUltimasTareas[1].estado
+let fechaTarea2 = new Date(cuatroUltimasTareas[1].updated_at)
+let descripcionTarea2 = cuatroUltimasTareas[1].descripcion
+let titleTarea2 = document.getElementById("Tarea2Card");
+let Tareaestado2 = document.getElementById("Tareaestado2");
+let Tareafecha2 = document.getElementById("Tareafecha2");
+let Tareadescripcion2 = document.getElementById("Tareadescripcion2");
+titleTarea2.innerHTML =  nombreTarea2
+if(estadoTarea2 == 0){
+  Tareaestado2.innerHTML =  "Pendiente"
+}else{
+  Tareaestado2.innerHTML =  "Presentada"
+}
+Tareafecha2.innerHTML =  fechaTarea2.toLocaleDateString('es-ES',options);
+Tareadescripcion2.innerHTML =  descripcionTarea2
+
+let nombreTarea3 = cuatroUltimasTareas[2].titulo
+let estadoTarea3 = cuatroUltimasTareas[2].estado
+let fechaTarea3 = new Date(cuatroUltimasTareas[2].updated_at)
+let descripcionTarea3 = cuatroUltimasTareas[2].descripcion
+let titleTarea3 = document.getElementById("Tarea3Card");
+let Tareaestado3 = document.getElementById("Tareaestado3");
+let Tareafecha3 = document.getElementById("Tareafecha3");
+let Tareadescripcion3 = document.getElementById("Tareadescripcion3");
+titleTarea3.innerHTML =  nombreTarea3
+if(estadoTarea3 == 0){
+  Tareaestado3.innerHTML =  "Pendiente"
+}else{
+  Tareaestado3.innerHTML =  "Presentada"
+}
+Tareafecha3.innerHTML =  fechaTarea3.toLocaleDateString('es-ES',options);
+Tareadescripcion3.innerHTML =  descripcionTarea3
+
+let nombreTarea4 = cuatroUltimasTareas[3].titulo
+let estadoTarea4 = cuatroUltimasTareas[3].estado
+let fechaTarea4 = new Date(cuatroUltimasTareas[3].updated_at)
+let descripcionTarea4 = cuatroUltimasTareas[3].descripcion
+let titleTarea4 = document.getElementById("Tarea4Card");
+let Tareaestado4 = document.getElementById("Tareaestado4");
+let Tareafecha4 = document.getElementById("Tareafecha4");
+let Tareadescripcion4 = document.getElementById("Tareadescripcion4");
+titleTarea4.innerHTML =  nombreTarea4
+if(estadoTarea4 == 0){
+  Tareaestado4.innerHTML =  "Pendiente"
+}else{
+  Tareaestado4.innerHTML =  "Presentada"
+}
+Tareafecha4.innerHTML =  fechaTarea4.toLocaleDateString('es-ES',options);
+Tareadescripcion4.innerHTML =  descripcionTarea4
+
+let nombreTarea5 = cuatroUltimasTareas[4].titulo
+let estadoTarea5 = cuatroUltimasTareas[4].estado
+let fechaTarea5 = new Date(cuatroUltimasTareas[4].updated_at)
+let descripcionTarea5 = cuatroUltimasTareas[4].descripcion
+let titleTarea5 = document.getElementById("Tarea5Card");
+let Tareaestado5 = document.getElementById("Tareaestado5");
+let Tareafecha5 = document.getElementById("Tareafecha5");
+let Tareadescripcion5 = document.getElementById("Tareadescripcion5");
+titleTarea5.innerHTML =  nombreTarea5
+if(estadoTarea5 == 0){
+  Tareaestado5.innerHTML =  "Pendiente"
+}else{
+  Tareaestado5.innerHTML =  "Presentada"
+}
+Tareafecha5.innerHTML =  fechaTarea5.toLocaleDateString('es-ES',options);
+Tareadescripcion5.innerHTML =  descripcionTarea5
+
+let nombreTarea6 = cuatroUltimasTareas[5].titulo
+let estadoTarea6 = cuatroUltimasTareas[5].estado
+let fechaTarea6 = new Date(cuatroUltimasTareas[5].updated_at)
+let descripcionTarea6 = cuatroUltimasTareas[5].descripcion
+let titleTarea6 = document.getElementById("Tarea6Card");
+let Tareaestado6 = document.getElementById("Tareaestado6");
+let Tareafecha6 = document.getElementById("Tareafecha6");
+let Tareadescripcion6 = document.getElementById("Tareadescripcion6");
+titleTarea6.innerHTML =  nombreTarea6
+if(estadoTarea6 == 0){
+  Tareaestado6.innerHTML =  "Pendiente"
+}else{
+  Tareaestado6.innerHTML =  "Presentada"
+}
+Tareafecha6.innerHTML =  fechaTarea6.toLocaleDateString('es-ES',options);
+Tareadescripcion6.innerHTML =  descripcionTarea6
+
+
 
 
 

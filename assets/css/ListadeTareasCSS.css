@@ -5,6 +5,12 @@
     width:50%;
 }
 
+.checkbox, .control-label, .form-control-feedback, .help-block, .radio, label {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    margin-left: 0;
+}
+
 #Categoria {
     width:50%; 
 }
@@ -50,9 +56,19 @@ order: 1;
     margin-top: 0;
 }
 
-@media (max-width: 560px) {
-    #chartContainer{
-        width: 50%;
-    }
-    
+.checkbox, .control-label, .form-control-feedback, .help-block, .radio, label {
+    font-size: 0.95rem;
+    margin-top: 25px;
+   margin-left: 40px;
 }
+
+input[type=checkbox], input[type=radio] {
+    box-sizing: border-box;
+    margin-right: 5px;
+    padding: 0;
+}
+#sidebar ul.components {
+    padding: 27px 0!important;
+}
+
+

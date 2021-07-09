@@ -5,6 +5,10 @@ import Tarea from './Modules/Tarea.js';
 //
 mostrarSeisPildoras();
 
+let infoCoder = Auth.getCoder()
+let emailUser = document.getElementById('usuario');
+ emailUser.innerHTML = infoCoder.name;
+
 async function mostrarSeisPildoras(){
     let listado = await Pildora.getListadoPildoras(); 
     const list = document.getElementById('pildora-list'); 
