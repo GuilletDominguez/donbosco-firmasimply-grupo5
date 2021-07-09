@@ -1,8 +1,7 @@
-//import { borrarPildora } from './firmasimply/Modules/API/llamadasApi.js';
 import Auth from './Modules/Auth/Auth.js';
 import Pildora from './Modules/Pildora.js';
 import Tarea from './Modules/Tarea.js';
-// mostrar las seis pildoras
+// mostrar las seis últimas pildoras
 //
 mostrarSeisPildoras();
 
@@ -11,19 +10,17 @@ async function mostrarSeisPildoras(){
     const list = document.getElementById('pildora-list'); 
     // let ultimas = listado.slice(listado.length-6);
     let ultimas = listado.reverse();
-    for (let x = 0; x < ultimas.length; x++){    
+    
+    for (let x = 0; x < ultimas.length; x++){   
         if (x < 6){            
             const row = document.createElement('tr');
-            // console.log(listado[x].estado);
 
             let text1;
             if (listado[x].estado == 0){
-                // console.log(listado[x].estado);
                 text1 = `<td><label><input type="checkbox" id="${listado[x].id}" class="pulsado"  value="${listado[x].estado}">Pendiente</label></td>`;
             }else{
                 text1 = `<td><label><input type="checkbox" id="${listado[x].id}" class="pulsado" checked="true" value="${listado[x].estado}">Presentada</label></td>`;
             }
-            
             row.innerHTML = `
                 <td>${listado[x].nombre}</td>
                 <td>${listado[x].descripcion}</td>
@@ -33,14 +30,35 @@ async function mostrarSeisPildoras(){
                 ${text1}
                 <td><a href="#" id="${listado[x].id}" class="btn btn-danger btn-sm delete">X</td>
                 `                
-                list.appendChild(row); 
+                list.appendChild(row);        
         }  
-    }
+    }   
+    // fechas
+    let listado1 = await Pildora.getListadoPildoras(); 
+    const fecha=new Date;  
+    var primerDiaSemana = new Date (fecha.setDate(fecha.getDate() - fecha.getDay()));
+    var ultimoDiaSemana = new Date(fecha.setDate(fecha.getDate() - fecha.getDay()+6));
+    const priDiaSemana = primerDiaSemana.toISOString(new Date(fecha.setDate(fecha.getDate() - fecha.getDay()))); //primer dia semana actual en formato corto
+    const ultDiaSemana = ultimoDiaSemana.toISOString(new Date(fecha.setDate(fecha.getDate() - fecha.getDay()))); //ultimo dia semana actual en formato corto
+    
+    let contador=0;   
+    let contadorPendientes=0;
+    for (let i = 0; i < listado1.length; i++){   
+        let pruebaFecha = truncateString(listado1[i].created_at,10); //fecha creacion de la pildora
+            if (pruebaFecha >= truncateString(priDiaSemana,10) && pruebaFecha <= truncateString(ultDiaSemana,10) && listado1[i].estado == 1){
+                contador = contador + 1;
+                document.getElementById('totalpresentadas').innerHTML = contador;
+            } else if(listado1[i].estado == 0 ){
+                contadorPendientes = contadorPendientes+1;
+                document.getElementById('totalpendientes').innerHTML = contadorPendientes;
+            }       
+    }       
+// funcionalidad marcar pildora como presentada o pendiente
     document.querySelector('#pildora-list').addEventListener('click', marcarPildora);
-
+    
     async function marcarPildora(e) {
+        e.preventDefault();
         let marcado = document.querySelector('.pulsado').checked;
-        // console.log(Pildora.getListadoPildoras())
         
         if (marcado == true) {
             let valor = e.target.value
@@ -49,7 +67,6 @@ async function mostrarSeisPildoras(){
                 estado : valor
             }
             await Pildora.marcarPildora(data,e.target.id);
-            // console.log(Pildora.getListadoPildoras(data));
         }else
         {   let valor = e.target.value
             valor = 0;
@@ -57,9 +74,7 @@ async function mostrarSeisPildoras(){
                 estado : valor
             }
             await Pildora.marcarPildora(data,e.target.id);
-            // console.log(Pildora.getListadoPildoras(data));
         }
-        
         window.location.reload(); 
     }  
         
@@ -81,7 +96,6 @@ hola.addEventListener('click',crearPildora, false);
             descripcion: descripcion,
             fecha_presentacion: fecha,
             created_at: hoy.toDateString(), 
-         //   estado: estado, //,  0 pendiente, 1 presentada
             user_id: Auth.getCoder().id, // esta funcion devuelve el id del coder logeado
             id : Pildora.getListadoPildoras().id
     };    
@@ -92,6 +106,7 @@ hola.addEventListener('click',crearPildora, false);
             alert('Pildora nueva creada','danger');
             limpiarCampos();
             cargarPildora(pildora);  
+            window.location.reload();
         }      
 }
 function limpiarCampos(){
@@ -119,7 +134,7 @@ function cargarPildora(pildora){
 } 
 
 //función para truncar la fecha y mostrarla corta
-   
+//  
 function truncateString(str, num) {
     if (str.length > num) {
         let subStr = str.substring(0, num);
@@ -129,9 +144,14 @@ function truncateString(str, num) {
     }
 }
 
+
+
+// función borrar píldora
+//
 document.querySelector('#pildora-list').addEventListener('click', deletePildora);
 
 async function deletePildora(e) {
+    e.preventDefault();
     if (e.target.classList.contains('delete')) {
         await Pildora.borrarPildora(e.target.id);
         alert('Pildora borrada');
